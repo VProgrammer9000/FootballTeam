@@ -4,6 +4,7 @@ public class Player {
     private String prename;
     private String name;
     private int nummer;
+    private String UUID;
 
     public String getPrename() {
         return prename;
@@ -27,5 +28,13 @@ public class Player {
 
     public void setNummer(int nummer) {
         this.nummer = nummer;
+    }
+
+    public String getUUID() {
+        return UUID;
+    }
+
+    public void setUUID(String UUID) {
+        this.UUID = UUID;
     }
 }
