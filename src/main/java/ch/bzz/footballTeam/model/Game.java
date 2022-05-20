@@ -11,22 +11,42 @@ public class Game {
     private Date date;
     private String UUID;
 
+    /**
+     * gets the first Team from the Game-object
+     * @return team1
+     */
     public Team getTeam1() {
         return team1;
     }
 
+    /**
+     * gets the second Team from the Game-object
+     * @return team2
+     */
     public Team getTeam2() {
         return team2;
     }
 
+    /**
+     * gets the Points of the first Team from the Game-object
+     * @return pointsTeam1
+     */
     public int getPointsTeam1() {
         return pointsTeam1;
     }
 
+    /**
+     * gets the first Team from the Game-object
+     * @return Team1
+     */
     public int getPointsTeam2() {
         return pointsTeam2;
     }
 
+    /**
+     * gets the Date from the Game-object
+     * @return date
+     */
     public Date getDate() {
         return date;
     }

@@ -6,6 +6,10 @@ public class Player {
     private int nummer;
     private String UUID;
 
+    /**
+     * gets the Prename from the Player-object
+     * @return prename
+     */
     public String getPrename() {
         return prename;
     }
@@ -14,6 +18,10 @@ public class Player {
         this.prename = prename;
     }
 
+    /**
+     * gets the Name from the Player-object
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -22,6 +30,10 @@ public class Player {
         this.name = name;
     }
 
+    /**
+     * gets the Nummer from the Player-object
+     * @return nummer
+     */
     public int getNummer() {
         return nummer;
     }
@@ -30,6 +42,10 @@ public class Player {
         this.nummer = nummer;
     }
 
+    /**
+     * gets the UUID from the Player-object
+     * @return UUID
+     */
     public String getUUID() {
         return UUID;
     }

@@ -4,14 +4,16 @@ import java.util.ArrayList;
 
 public class Team {
     private String name;
-    private String strengthClass;
-    private int placeLiga;
     private int amountWins;
     private int amountLost;
     private ArrayList<Player> allPlayer;
     private ArrayList <Game>allGame;
     private String UUID;
 
+    /**
+     * gets name from the Team-object
+     * @return name
+     */
     public String getName() {
         return name;
     }
@@ -20,22 +22,10 @@ public class Team {
         this.name = name;
     }
 
-    public String getStrengthClass() {
-        return strengthClass;
-    }
-
-    public void setStrengthClass(String strengthClass) {
-        this.strengthClass = strengthClass;
-    }
-
-    public int getPlaceLiga() {
-        return placeLiga;
-    }
-
-    public void setPlaceLiga(int placeLiga) {
-        this.placeLiga = placeLiga;
-    }
-
+    /**
+     * gets the Amounts of wins from the Team-object
+     * @return amountWins
+     */
     public int getAmountWins() {
         return amountWins;
     }
@@ -44,6 +34,10 @@ public class Team {
         this.amountWins = amountWins;
     }
 
+    /**
+     * gets the Amounts of loses from the Team-object
+     * @return amountWins
+     */
     public int getAmountLost() {
         return amountLost;
     }
@@ -52,6 +46,10 @@ public class Team {
         this.amountLost = amountLost;
     }
 
+    /**
+     * gets all Players from the Team-object
+     * @return players
+     */
     public ArrayList<Player> getAllPlayer() {
         return allPlayer;
     }
@@ -60,6 +58,10 @@ public class Team {
         this.allPlayer = allPlayer;
     }
 
+    /**
+     * gets name from the Team-object
+     * @return Name
+     */
     public ArrayList<Game> getAllGame() {
         return allGame;
     }
@@ -68,6 +70,10 @@ public class Team {
         this.allGame = allGame;
     }
 
+    /**
+     * gets UUID from the Team-object
+     * @return UUID
+     */
     public String getUUID() {
         return UUID;
     }
