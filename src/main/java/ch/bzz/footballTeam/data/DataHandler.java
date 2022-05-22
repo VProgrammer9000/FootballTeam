@@ -37,7 +37,8 @@ public class DataHandler {
 
     /**
      * gets the only instance of this class
-     * @return
+     *
+     * @return instance of DataHandler
      */
     public static DataHandler getInstance() {
         if (instance == null)
@@ -47,24 +48,25 @@ public class DataHandler {
 
     /**
      * reads all Games
+     *
      * @return list of games
      */
     public List<Game> readAllGames() {
-
         return getGameList();
     }
 
     /**
      * reads all Players
+     *
      * @return list of players
      */
     public List<Player> readAllPlayers() {
-
         return getPlayerList();
     }
 
     /**
      * reads all Teams
+     *
      * @return list of teams
      */
     public List<Team> readAllTeams() {
@@ -75,7 +77,8 @@ public class DataHandler {
 
     /**
      * reads a game by its uuid
-     * @param gameUUID
+     *
+     * @param gameUUID UUID of the Game
      * @return the Game (null=not found)
      */
     public Game readGameByUUID(String gameUUID) {
@@ -90,7 +93,8 @@ public class DataHandler {
 
     /**
      * reads a game by its uuid
-     * @param playerUUID
+     *
+     * @param playerUUID UUID of the Player
      * @return the Player (null=not found)
      */
     public Player readPlayerByUUID(String playerUUID) {
@@ -105,7 +109,8 @@ public class DataHandler {
 
     /**
      * reads a game by its uuid
-     * @param teamUUID
+     *
+     * @param teamUUID UUID of the Player
      * @return the team (null=not found)
      */
     public Team readTeamByUUID(String teamUUID) {
@@ -127,7 +132,7 @@ public class DataHandler {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("GameJSON")
+                            Config.getProperty("gameJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
@@ -140,16 +145,14 @@ public class DataHandler {
         }
     }
 
-
-
     /**
-     * reads the publishers from the JSON-file
+     * reads the players from the JSON-file
      */
     private void readPlayerJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("publisherJSON")
+                            Config.getProperty("playerJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
@@ -162,16 +165,14 @@ public class DataHandler {
         }
     }
 
-
-
     /**
-     * reads the publishers from the JSON-file
+     * reads the teams from the JSON-file
      */
     private void readTeamJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
-                            Config.getProperty("publisherJSON")
+                            Config.getProperty("teamJSON")
                     )
             );
             ObjectMapper objectMapper = new ObjectMapper();
@@ -183,13 +184,6 @@ public class DataHandler {
             ex.printStackTrace();
         }
     }
-
-
-
-
-
-
-
 
 
 
@@ -211,8 +205,6 @@ public class DataHandler {
         this.gameList = gameList;
     }
 
-
-
     /**
      * gets playerList
      *
@@ -230,9 +222,6 @@ public class DataHandler {
     private void setPlayerList(List<Player> playerList) {
         this.playerList = playerList;
     }
-
-
-
 
     /**
      * gets teamList

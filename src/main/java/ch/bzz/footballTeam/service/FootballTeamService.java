@@ -23,10 +23,10 @@ public class FootballTeamService {
     @Path("gameList")
     @Produces(MediaType.APPLICATION_JSON)
     public Response gameList() {
-        List<Game> bookMap=DataHandler.getInstance().readAllGames();
+        List<Game> gameList=DataHandler.getInstance().readAllGames();
         return Response
                 .status(200)
-                .entity(bookMap)
+                .entity(gameList)
                 .build();
     }
 
@@ -54,10 +54,10 @@ public class FootballTeamService {
     @Path("playerList")
     @Produces(MediaType.APPLICATION_JSON)
     public Response playerList() {
-        List<Player> bookMap=DataHandler.getInstance().readAllPlayers();
+        List<Player> playerList=DataHandler.getInstance().readAllPlayers();
         return Response
                 .status(200)
-                .entity(bookMap)
+                .entity(playerList)
                 .build();
     }
 

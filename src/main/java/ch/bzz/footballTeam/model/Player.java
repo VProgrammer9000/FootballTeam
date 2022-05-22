@@ -14,6 +14,11 @@ public class Player {
         return prename;
     }
 
+    /**
+     * sets prename
+     *
+     * @param prename the value to set
+     */
     public void setPrename(String prename) {
         this.prename = prename;
     }
@@ -26,6 +31,11 @@ public class Player {
         return name;
     }
 
+    /**
+     * sets name
+     *
+     * @param name the value to set
+     */
     public void setName(String name) {
         this.name = name;
     }
@@ -38,6 +48,11 @@ public class Player {
         return nummer;
     }
 
+    /**
+     * sets nummer
+     *
+     * @param nummer the value to set
+     */
     public void setNummer(int nummer) {
         this.nummer = nummer;
     }
@@ -50,6 +65,11 @@ public class Player {
         return UUID;
     }
 
+    /**
+     * sets UUID
+     *
+     * @param UUID the value to set
+     */
     public void setUUID(String UUID) {
         this.UUID = UUID;
     }
