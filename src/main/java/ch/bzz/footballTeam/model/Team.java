@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Team {
     private ArrayList<String> allPlayer;
 
-    private String UUID;
+    private String uuid;
     private String name;
     private int amountWins;
     private int amountLost;
@@ -83,19 +83,20 @@ public class Team {
     }
 
     /**
-     * gets UUID from the Team-object
-     * @return UUID
+     * gets Uuid from the Team-object
+     * 
+     * @return uuid
      */
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
     /**
-     * sets UUID
+     * sets uuid
      *
-     * @param UUID the value to set
+     * @param uuid the value to set
      */
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }

@@ -5,11 +5,12 @@ import java.sql.Date;
 public class Game {
     private String team1;
     private String team2;
-
     private int pointsTeam1;
     private int pointsTeam2;
+
+    //TODO Error probably due to date format
     private Date date;
-    private String UUID;
+    private String uuid;
 
     /**
      * gets the first Team (UUID) from the Game-object
@@ -61,8 +62,8 @@ public class Game {
      *
      * @return UUID
      */
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
     /**
@@ -113,9 +114,9 @@ public class Game {
     /**
      * sets UUID
      *
-     * @param UUID the value to set
+     * @param uuid the value to set
      */
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }

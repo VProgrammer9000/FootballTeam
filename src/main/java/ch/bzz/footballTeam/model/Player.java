@@ -4,7 +4,7 @@ public class Player {
     private String prename;
     private String name;
     private int number;
-    private String UUID;
+    private String uuid;
 
     /**
      * gets the Prename from the Player-object
@@ -61,16 +61,16 @@ public class Player {
      * gets the UUID from the Player-object
      * @return UUID
      */
-    public String getUUID() {
-        return UUID;
+    public String getUuid() {
+        return uuid;
     }
 
     /**
      * sets UUID
      *
-     * @param UUID the value to set
+     * @param uuid the value to set
      */
-    public void setUUID(String UUID) {
-        this.UUID = UUID;
+    public void setUuid(String uuid) {
+        this.uuid = uuid;
     }
 }

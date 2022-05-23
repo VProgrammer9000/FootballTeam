@@ -84,7 +84,7 @@ public class DataHandler {
     public Game readGameByUUID(String gameUUID) {
         Game game = null;
         for (Game entry : getGameList()) {
-            if (entry.getUUID().equals(gameUUID)) {
+            if (entry.getUuid().equals(gameUUID)) {
                 game = entry;
             }
         }
@@ -100,7 +100,7 @@ public class DataHandler {
     public Player readPlayerByUUID(String playerUUID) {
         Player player = null;
         for (Player entry : getPlayerList()) {
-            if (entry.getUUID().equals(playerUUID)) {
+            if (entry.getUuid().equals(playerUUID)) {
                 player = entry;
             }
         }
@@ -116,7 +116,7 @@ public class DataHandler {
     public Team readTeamByUUID(String teamUUID) {
         Team team = null;
         for (Team entry : getTeamList()) {
-            if (entry.getUUID().equals(teamUUID)) {
+            if (entry.getUuid().equals(teamUUID)) {
                 team = entry;
             }
         }
