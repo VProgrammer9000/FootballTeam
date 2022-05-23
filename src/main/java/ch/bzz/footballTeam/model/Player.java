@@ -3,7 +3,7 @@ package ch.bzz.footballTeam.model;
 public class Player {
     private String prename;
     private String name;
-    private int nummer;
+    private int number;
     private String UUID;
 
     /**
@@ -44,17 +44,17 @@ public class Player {
      * gets the Nummer from the Player-object
      * @return nummer
      */
-    public int getNummer() {
-        return nummer;
+    public int getNumber() {
+        return number;
     }
 
     /**
      * sets nummer
      *
-     * @param nummer the value to set
+     * @param number the value to set
      */
-    public void setNummer(int nummer) {
-        this.nummer = nummer;
+    public void setNumber(int number) {
+        this.number = number;
     }
 
     /**

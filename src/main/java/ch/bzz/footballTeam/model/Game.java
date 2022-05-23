@@ -1,18 +1,10 @@
 package ch.bzz.footballTeam.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.sql.Date;
-import java.util.ArrayList;
 
 public class Game {
-    @JsonIgnore
-    private Team team1;
-    @JsonIgnore
-    private Team team2;
-
-    private String team1UUID;
-    private String team2UUID;
+    private String team1;
+    private String team2;
 
     private int pointsTeam1;
     private int pointsTeam2;
@@ -20,20 +12,20 @@ public class Game {
     private String UUID;
 
     /**
-     * gets the first Team from the Game-object
+     * gets the first Team (UUID) from the Game-object
      *
      * @return team1
      */
-    public Team getTeam1() {
+    public String getTeam1() {
         return team1;
     }
 
     /**
-     * gets the second Team from the Game-object
+     * gets the second Team (UUID) from the Game-object
      *
      * @return team2
      */
-    public Team getTeam2() {
+    public String getTeam2() {
         return team2;
     }
 
@@ -74,20 +66,20 @@ public class Game {
     }
 
     /**
-     * sets team1
+     * sets team1 (UUID)
      *
      * @param team1 the value to set
      */
-    public void setTeam1(Team team1) {
+    public void setTeam1(String team1) {
         this.team1 = team1;
     }
 
     /**
-     * sets team2
+     * sets team2 (UUID)
      *
      * @param team2 the value to set
      */
-    public void setTeam2(Team team2) {
+    public void setTeam2(String team2) {
         this.team2 = team2;
     }
 

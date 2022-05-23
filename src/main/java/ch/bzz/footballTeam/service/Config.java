@@ -26,7 +26,9 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet providers = new HashSet<Class<?>>();
-        providers.add(FootballTeamService.class);
+        providers.add(GameService.class);
+        providers.add(PlayerService.class);
+        providers.add(TeamService.class);
         return providers;
     }
 

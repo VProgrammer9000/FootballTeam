@@ -1,18 +1,9 @@
 package ch.bzz.footballTeam.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import java.util.ArrayList;
 
 public class Team {
-    @JsonIgnore
-    private ArrayList<Player> allPlayer;
-    @JsonIgnore
-    private ArrayList <Game>allGame;
-
-
-    private ArrayList<String> allPlayerUUID;
-    private ArrayList<String>allGameUUID;
+    private ArrayList<String> allPlayer;
 
     private String UUID;
     private String name;
@@ -78,7 +69,7 @@ public class Team {
      *
      * @return players
      */
-    public ArrayList<Player> getAllPlayer() {
+    public ArrayList<String> getAllPlayer() {
         return allPlayer;
     }
 
@@ -87,26 +78,8 @@ public class Team {
      *
      * @param allPlayer the value to set
      */
-    public void setAllPlayer(ArrayList<Player> allPlayer) {
+    public void setAllPlayer(ArrayList<String> allPlayer) {
         this.allPlayer = allPlayer;
-    }
-
-    /**
-     * gets name from the Team-object
-     *
-     * @return Name
-     */
-    public ArrayList<Game> getAllGame() {
-        return allGame;
-    }
-
-    /**
-     * sets allGame
-     *
-     * @param allGame the value to set
-     */
-    public void setAllGame(ArrayList<Game> allGame) {
-        this.allGame = allGame;
     }
 
     /**
