@@ -1,11 +1,19 @@
 package ch.bzz.footballTeam.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.sql.Date;
 import java.util.ArrayList;
 
 public class Game {
+    @JsonIgnore
     private Team team1;
+    @JsonIgnore
     private Team team2;
+
+    private String team1UUID;
+    private String team2UUID;
+
     private int pointsTeam1;
     private int pointsTeam2;
     private Date date;

@@ -1,14 +1,23 @@
 package ch.bzz.footballTeam.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.ArrayList;
 
 public class Team {
+    @JsonIgnore
+    private ArrayList<Player> allPlayer;
+    @JsonIgnore
+    private ArrayList <Game>allGame;
+
+
+    private ArrayList<String> allPlayerUUID;
+    private ArrayList<String>allGameUUID;
+
+    private String UUID;
     private String name;
     private int amountWins;
     private int amountLost;
-    private ArrayList<Player> allPlayer;
-    private ArrayList <Game>allGame;
-    private String UUID;
 
     /**
      * gets name from the Team-object
