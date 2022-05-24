@@ -1,7 +1,7 @@
 package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
-import ch.bzz.footballTeam.model.Game;
+import ch.bzz.footballTeam.model.Player;
 import ch.bzz.footballTeam.model.Team;
 
 import javax.ws.rs.GET;
@@ -10,31 +10,51 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
+import java.util.stream.Collectors;
+
 @Path("team")
 public class TeamService {
 
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response teamList() {
+    public Response teamList(@QueryParam("sort") String sort) {
         List<Team> teamList= DataHandler.getInstance().readAllTeams();
-        return Response
-                .status(200)
-                .entity(teamList)
-                .build();
+
+        //sort
+        if (sort!=null) {
+            List<Team> cloned_teamList = teamList.stream().collect(Collectors.toList());
+
+            if (sort.equals("name")) {
+                cloned_teamList.sort(Comparator.comparing(Team::getName));
+            }
+
+            if (sort.equals("amountWins")) {
+                cloned_teamList.sort(Comparator.comparing(Team::getAmountWins));
+            }
+
+            if (sort.equals("amountLost")) {
+                cloned_teamList.sort(Comparator.comparing(Team::getAmountLost));
+            }
+
+            return Response.status(200).entity(cloned_teamList).build();
+        }
+
+        return Response.status(200).entity(teamList).build();
     }
 
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response teamRead(@QueryParam("uuid") String teamUUID) {
+    public Response teamRead(@QueryParam("uuid") String teamUUID,@QueryParam("filterN") String teamName) {
         Team team=DataHandler.getInstance().readTeamByUUID(teamUUID);
 
         if(team==null) {
             return Response.status(400).build();
         }
+
 
         return Response.status(200).entity(team).build();
     }

@@ -10,20 +10,39 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Path("player")
 public class PlayerService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response playerList() {
+    public Response playerList(@QueryParam("sort") String sort) {
         List<Player> playerList= DataHandler.getInstance().readAllPlayers();
-        return Response
-                .status(200)
-                .entity(playerList)
-                .build();
+
+        //sort
+        if (sort!=null) {
+            List<Player> cloned_playerList = playerList.stream().collect(Collectors.toList());
+
+            if (sort.equals("name")) {
+                cloned_playerList.sort(Comparator.comparing(Player::getName));
+            }
+
+            if (sort.equals("prename")) {
+                cloned_playerList.sort(Comparator.comparing(Player::getPrename));
+            }
+
+            if (sort.equals("number")) {
+                cloned_playerList.sort(Comparator.comparing(Player::getNumber));
+            }
+
+            return Response.status(200).entity(cloned_playerList).build();
+        }
+
+        return Response.status(200).entity(playerList).build();
     }
 
     @GET

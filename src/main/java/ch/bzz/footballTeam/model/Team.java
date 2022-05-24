@@ -3,12 +3,12 @@ package ch.bzz.footballTeam.model;
 import java.util.ArrayList;
 
 public class Team {
-    private ArrayList<String> allPlayer;
 
-    private String uuid;
     private String name;
     private int amountWins;
     private int amountLost;
+    private ArrayList<String> allPlayer;
+    private String uuid;
 
     /**
      * gets name from the Team-object

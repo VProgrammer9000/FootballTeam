@@ -1,6 +1,5 @@
 package ch.bzz.footballTeam.model;
 
-import java.sql.Date;
 
 public class Game {
     private String team1;

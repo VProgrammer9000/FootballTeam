@@ -9,20 +9,30 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
+import java.util.stream.Collectors;
 
 @Path("game")
 public class GameService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response gameList() {
+    public Response gameList(@QueryParam("sort") String sort) {
         List<Game> gameList= DataHandler.getInstance().readAllGames();
-        return Response
-                .status(200)
-                .entity(gameList)
-                .build();
+
+        //sort
+        if (sort!=null) {
+            List<Game> cloned_gameList = gameList.stream().collect(Collectors.toList());
+
+            if (sort.equals("date")) {
+                cloned_gameList.sort(Comparator.comparing(Game::getDate));
+            }
+
+            return Response.status(200).entity(cloned_gameList).build();
+        }
+
+        return Response.status(200).entity(gameList).build();
     }
 
     @GET
