@@ -1,0 +1,16 @@
+[
+ {
+  "name": "Paris Saint-Germain Football Club",
+  "amountWins": "2",
+  "amountLost": "0",
+  "allPlayer": ["e3f43bc2-d9bb-11ec-9d64-0242ac120002","ebf7c35c-d9bb-11ec-9d64-0242ac120002","f0b6b182-d9bb-11ec-9d64-0242ac120002"],
+  "uuid": "907271a8-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "name": "Manchester United",
+  "amountWins": "0",
+  "amountLost": "2",
+  "allPlayer": ["f4ba965e-d9bb-11ec-9d64-0242ac120002","f8c4857a-d9bb-11ec-9d64-0242ac120002","fe733f7a-d9bb-11ec-9d64-0242ac120002"],
+  "uuid": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002"
+ }
+]

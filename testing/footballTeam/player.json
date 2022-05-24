@@ -1,0 +1,38 @@
+[
+ {
+  "prename": "Cristiano",
+  "name": "Ronaldo",
+  "number": "7",
+  "uuid": "e3f43bc2-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "prename": "Paul",
+  "name": "Pogba",
+  "number": "6",
+  "uuid": "ebf7c35c-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "prename": "Diogo ",
+  "name": "Dalot",
+  "number": "20",
+  "uuid": "f0b6b182-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "prename": "Lionel ",
+  "name": "Messi",
+  "number": "30",
+  "uuid": "f4ba965e-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "prename": "Kylian ",
+  "name": "Mbappé",
+  "number": "7",
+  "uuid": "f8c4857a-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "prename": "Sergio",
+  "name": "Ramos",
+  "number": "4",
+  "uuid": "fe733f7a-d9bb-11ec-9d64-0242ac120002"
+ }
+]

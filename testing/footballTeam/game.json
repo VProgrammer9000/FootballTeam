@@ -1,0 +1,18 @@
+[
+ {
+  "team1": "907271a8-d9bb-11ec-9d64-0242ac120002",
+  "team2": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+  "pointsTeam1": "2",
+  "pointsTeam2": "0",
+  "date": "2020-11-10",
+  "uuid": "d1afb8d8-d9bb-11ec-9d64-0242ac120002"
+ },
+ {
+  "team1": "907271a8-d9bb-11ec-9d64-0242ac120002",
+  "team2": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+  "pointsTeam1": "3",
+  "pointsTeam2": "2",
+  "date": "2021-01-10",
+  "uuid": "dac43c46-d9bb-11ec-9d64-0242ac120002"
+ }
+]

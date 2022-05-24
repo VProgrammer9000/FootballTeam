@@ -1,0 +1,587 @@
+{
+	"id": "04c311d4-b524-40d7-8cb8-582a0a4ce3b1",
+	"name": "FootballTeam",
+	"timestamp": "2022-05-24T17:24:41.767Z",
+	"collection_id": "a95eb68a-1a31-4893-a64f-5c2eb8f3e001",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 9,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "002aa13c-56ed-4d00-a328-eb4cd023271f",
+			"name": "1.1.1.1 read list of games",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "13056215-2053-4703-9b29-89a34739b028",
+			"name": "1.1.1.2 read list of teams",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list",
+			"time": 5,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				5
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "4c38a41a-38fc-4ec2-8ff2-d14ed120b4bd",
+			"name": "1.1.1.3 read list of players",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "004ac5c9-f573-4b61-98ff-cec0929009b0",
+			"name": "1.1.2.1.1 read list of games sorted by date",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list?sort=date",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				10
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "c697f333-3735-491e-ab12-f54fcfa403e1",
+			"name": "1.1.2.2.1 read list of teams sorted by name",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list?sort=name",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "605c86cb-aec4-4056-9319-1390d826b1ed",
+			"name": "1.1.2.2.2 read list of teams sorted by amountWins",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list?sort=amountWins",
+			"time": 27,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				27
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "1330fc92-9f6c-496d-92c3-fa0313c57665",
+			"name": "1.1.2.2.3 read list of teams sorted by amountLost",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list?sort=amountLost",
+			"time": 39,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				39
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "a9103902-0153-47d1-be02-e728a28c8882",
+			"name": "1.1.2.3.1 read list of player sorted by name",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list?sort=name",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "0548661e-aba6-4216-9c5c-5d1124407f41",
+			"name": "1.1.2.3.2 read list of player sorted by prename",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list?sort=prename",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				35
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "5312dbe6-55ad-4fb2-b034-d0a728f590a2",
+			"name": "1.1.2.3.3 read list of player sorted by number",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list?sort=number",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				35
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "199c70ea-9b15-48b2-8f74-658395dd4cb1",
+			"name": "1.1.3.1 read list of game invalid sort value",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list?sort=invalid",
+			"time": 27,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				27
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "330c86a1-41aa-4cc7-b4ed-9f75b7709b0c",
+			"name": "1.1.3.2 read list of team invalid sort value",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list?sort=invalid",
+			"time": 11,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "92d080c8-a93a-4d84-ad5d-7b6f23240e32",
+			"name": "1.1.3.3 read list of player invalid sort value",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list?sort=invalid",
+			"time": 47,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				47
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "720cfb6b-35e5-4e63-8779-af629c60506a",
+			"name": "1.2.1.1 read a game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				9
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "6b362bdc-7dc9-47ed-8ad0-7d1851ed5f0f",
+			"name": "1.2.1.2 read a team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				20
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "ec71fdfb-e36f-4b1f-8710-7e82e6df306a",
+			"name": "1.2.1.3 read a player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=f8c4857a-d9bb-11ec-9d64-0242ac120002",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				13
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "3eee2620-2c5c-4595-b472-ea2a2d6ad766",
+			"name": "1.2.2.1 read game no UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read",
+			"time": 5,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "a358b0c6-eddf-464d-abeb-c7b97163e41a",
+			"name": "1.2.2.2 read team no UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read",
+			"time": 28,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "ca44352d-9cd4-408b-9368-a17fb0e9f9fb",
+			"name": "1.2.2.3 read player no UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read",
+			"time": 43,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				43
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "9f876037-a56e-4446-adc1-002d1a78b459",
+			"name": "1.2.3.1 read game wrong UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=123",
+			"time": 55,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				55
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "284a00ad-8062-4a4f-9dd9-840add1b7689",
+			"name": "1.2.3.2 read team wrong UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=123",
+			"time": 9,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f089bd89-5263-4153-9be3-e7ed6199b6a4",
+			"name": "1.2.3.3 read player wrong UUID",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=123",
+			"time": 7,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 463,
+	"collection": {
+		"requests": [
+			{
+				"id": "002aa13c-56ed-4d00-a328-eb4cd023271f",
+				"method": "GET"
+			},
+			{
+				"id": "13056215-2053-4703-9b29-89a34739b028",
+				"method": "GET"
+			},
+			{
+				"id": "4c38a41a-38fc-4ec2-8ff2-d14ed120b4bd",
+				"method": "GET"
+			},
+			{
+				"id": "004ac5c9-f573-4b61-98ff-cec0929009b0",
+				"method": "GET"
+			},
+			{
+				"id": "c697f333-3735-491e-ab12-f54fcfa403e1",
+				"method": "GET"
+			},
+			{
+				"id": "605c86cb-aec4-4056-9319-1390d826b1ed",
+				"method": "GET"
+			},
+			{
+				"id": "1330fc92-9f6c-496d-92c3-fa0313c57665",
+				"method": "GET"
+			},
+			{
+				"id": "a9103902-0153-47d1-be02-e728a28c8882",
+				"method": "GET"
+			},
+			{
+				"id": "0548661e-aba6-4216-9c5c-5d1124407f41",
+				"method": "GET"
+			},
+			{
+				"id": "5312dbe6-55ad-4fb2-b034-d0a728f590a2",
+				"method": "GET"
+			},
+			{
+				"id": "199c70ea-9b15-48b2-8f74-658395dd4cb1",
+				"method": "GET"
+			},
+			{
+				"id": "330c86a1-41aa-4cc7-b4ed-9f75b7709b0c",
+				"method": "GET"
+			},
+			{
+				"id": "92d080c8-a93a-4d84-ad5d-7b6f23240e32",
+				"method": "GET"
+			},
+			{
+				"id": "720cfb6b-35e5-4e63-8779-af629c60506a",
+				"method": "GET"
+			},
+			{
+				"id": "6b362bdc-7dc9-47ed-8ad0-7d1851ed5f0f",
+				"method": "GET"
+			},
+			{
+				"id": "ec71fdfb-e36f-4b1f-8710-7e82e6df306a",
+				"method": "GET"
+			},
+			{
+				"id": "3eee2620-2c5c-4595-b472-ea2a2d6ad766",
+				"method": "GET"
+			},
+			{
+				"id": "a358b0c6-eddf-464d-abeb-c7b97163e41a",
+				"method": "GET"
+			},
+			{
+				"id": "ca44352d-9cd4-408b-9368-a17fb0e9f9fb",
+				"method": "GET"
+			},
+			{
+				"id": "9f876037-a56e-4446-adc1-002d1a78b459",
+				"method": "GET"
+			},
+			{
+				"id": "284a00ad-8062-4a4f-9dd9-840add1b7689",
+				"method": "GET"
+			},
+			{
+				"id": "f089bd89-5263-4153-9be3-e7ed6199b6a4",
+				"method": "GET"
+			},
+			{
+				"id": "cf3894c9-a0be-4400-a9cd-bf06f23ec407",
+				"method": "GET"
+			}
+		]
+	}
+}
