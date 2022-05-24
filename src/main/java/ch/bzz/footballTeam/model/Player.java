@@ -1,5 +1,12 @@
 package ch.bzz.footballTeam.model;
 
+/**
+ * The Model-Class Player is storing data for the Server.
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
+ */
 public class Player {
     private String prename;
     private String name;

@@ -1,7 +1,6 @@
 package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
-import ch.bzz.footballTeam.model.Player;
 import ch.bzz.footballTeam.model.Team;
 
 import javax.ws.rs.GET;
@@ -14,6 +13,13 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
+/**
+ * All Services for the Model-Class Team
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
+ */
 @Path("team")
 public class TeamService {
 

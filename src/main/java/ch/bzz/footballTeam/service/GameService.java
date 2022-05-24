@@ -12,7 +12,14 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.Collectors;
+
+/**
+ * All Services for the Model-Class Game
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
+ */
 
 @Path("game")
 public class GameService {

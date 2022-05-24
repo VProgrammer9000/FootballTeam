@@ -9,6 +9,13 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import java.time.LocalDate;
 
+/**
+ * The Model-Class Game is storing data for the Server.
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
+ */
 public class Game {
     private String team1;
     private String team2;

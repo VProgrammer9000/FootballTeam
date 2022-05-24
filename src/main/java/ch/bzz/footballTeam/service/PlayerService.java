@@ -1,7 +1,6 @@
 package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
-import ch.bzz.footballTeam.model.Game;
 import ch.bzz.footballTeam.model.Player;
 
 import javax.ws.rs.GET;
@@ -13,9 +12,14 @@ import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.UUID;
-import java.util.stream.Collectors;
 
+/**
+ * All Services for the Model-Class Player
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
+ */
 @Path("player")
 public class PlayerService {
     @GET

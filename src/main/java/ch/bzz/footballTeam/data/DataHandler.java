@@ -15,7 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * reads and writes the data in the JSON-files
+ * Get and Converts the Data from the JSON-Files
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 24.05.2022
  */
 public class DataHandler {
     private static DataHandler instance = null;
