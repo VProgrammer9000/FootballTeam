@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.UUID;
@@ -25,18 +26,16 @@ public class PlayerService {
 
         //sort
         if (sort!=null) {
-            List<Player> cloned_playerList = playerList.stream().collect(Collectors.toList());
+            List<Player> cloned_playerList = new ArrayList<>(playerList);
 
             if (sort.equals("name")) {
                 cloned_playerList.sort(Comparator.comparing(Player::getName));
-            }
-
-            if (sort.equals("prename")) {
+            }else if (sort.equals("prename")) {
                 cloned_playerList.sort(Comparator.comparing(Player::getPrename));
-            }
-
-            if (sort.equals("number")) {
+            }else if (sort.equals("number")) {
                 cloned_playerList.sort(Comparator.comparing(Player::getNumber));
+            }else{
+                return Response.status(400).build();
             }
 
             return Response.status(200).entity(cloned_playerList).build();

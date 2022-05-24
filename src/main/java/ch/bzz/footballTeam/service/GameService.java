@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -23,10 +24,12 @@ public class GameService {
 
         //sort
         if (sort!=null) {
-            List<Game> cloned_gameList = gameList.stream().collect(Collectors.toList());
+            List<Game> cloned_gameList = new ArrayList<>(gameList);
 
             if (sort.equals("date")) {
                 cloned_gameList.sort(Comparator.comparing(Game::getDate));
+            }else{
+                return Response.status(400).build();
             }
 
             return Response.status(200).entity(cloned_gameList).build();

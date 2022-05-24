@@ -10,6 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -25,18 +26,16 @@ public class TeamService {
 
         //sort
         if (sort!=null) {
-            List<Team> cloned_teamList = teamList.stream().collect(Collectors.toList());
+            List<Team> cloned_teamList = new ArrayList<>(teamList);
 
             if (sort.equals("name")) {
                 cloned_teamList.sort(Comparator.comparing(Team::getName));
-            }
-
-            if (sort.equals("amountWins")) {
+            } else if (sort.equals("amountWins")) {
                 cloned_teamList.sort(Comparator.comparing(Team::getAmountWins));
-            }
-
-            if (sort.equals("amountLost")) {
+            } else if (sort.equals("amountLost")) {
                 cloned_teamList.sort(Comparator.comparing(Team::getAmountLost));
+            }else{
+                return Response.status(400).build();
             }
 
             return Response.status(200).entity(cloned_teamList).build();

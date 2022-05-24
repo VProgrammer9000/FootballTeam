@@ -1,12 +1,23 @@
 package ch.bzz.footballTeam.model;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
+
+import java.time.LocalDate;
+
 public class Game {
     private String team1;
     private String team2;
     private int pointsTeam1;
     private int pointsTeam2;
-    private String date;
+    @JsonDeserialize(using = LocalDateDeserializer.class)
+    @JsonSerialize(using = LocalDateSerializer.class)
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    private LocalDate date;
     private String uuid;
 
     /**
@@ -50,7 +61,7 @@ public class Game {
      *
      * @return date
      */
-    public String getDate() {
+    public LocalDate getDate() {
         return date;
     }
 
@@ -104,7 +115,7 @@ public class Game {
      *
      * @param date the value to set
      */
-    public void setDate(String date) {
+    public void setDate(LocalDate date) {
         this.date = date;
     }
 
