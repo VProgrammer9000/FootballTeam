@@ -7,9 +7,7 @@ public class Game {
     private String team2;
     private int pointsTeam1;
     private int pointsTeam2;
-
-    //TODO Error probably due to date format
-    private Date date;
+    private String date;
     private String uuid;
 
     /**
@@ -53,7 +51,7 @@ public class Game {
      *
      * @return date
      */
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
@@ -107,7 +105,7 @@ public class Game {
      *
      * @param date the value to set
      */
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 

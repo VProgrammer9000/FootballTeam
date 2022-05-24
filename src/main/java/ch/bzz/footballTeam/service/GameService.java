@@ -29,19 +29,12 @@ public class GameService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response gameRead(@QueryParam("uuid") String gameUUID) {
-        try {
-            UUID uuid = UUID.fromString(gameUUID);
-        } catch (IllegalArgumentException e) {
-            return Response
-                    .status(400)
-                    .build();
-        }
-
         Game game=DataHandler.getInstance().readGameByUUID(gameUUID);
 
-        return Response
-                .status(200)
-                .entity(game)
-                .build();
+        if(game==null) {
+            return Response.status(400).build();
+        }
+
+        return Response.status(200).entity(game).build();
     }
 }

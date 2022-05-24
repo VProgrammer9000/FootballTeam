@@ -1,6 +1,7 @@
 package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
+import ch.bzz.footballTeam.model.Game;
 import ch.bzz.footballTeam.model.Team;
 
 import javax.ws.rs.GET;
@@ -29,19 +30,12 @@ public class TeamService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response teamRead(@QueryParam("uuid") String teamUUID) {
-        try {
-            UUID uuid = UUID.fromString(teamUUID);
-        } catch (IllegalArgumentException e) {
-            return Response
-                    .status(400)
-                    .build();
-        }
-
         Team team=DataHandler.getInstance().readTeamByUUID(teamUUID);
 
-        return Response
-                .status(200)
-                .entity(team)
-                .build();
+        if(team==null) {
+            return Response.status(400).build();
+        }
+
+        return Response.status(200).entity(team).build();
     }
 }
