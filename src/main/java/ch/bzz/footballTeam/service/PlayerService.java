@@ -26,7 +26,7 @@ public class PlayerService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response playerList(@QueryParam("sort") String sort) {
-        List<Player> playerList= DataHandler.getInstance().readAllPlayers();
+        List<Player> playerList= DataHandler.readAllPlayers();
 
         //sort
         if (sort!=null) {
@@ -52,7 +52,7 @@ public class PlayerService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response playerRead(@QueryParam("uuid") String playerUUID) {
-        Player player=DataHandler.getInstance().readPlayerByUUID(playerUUID);
+        Player player=DataHandler.readPlayerByUUID(playerUUID);
 
         if(player==null) {
             return Response.status(400).build();

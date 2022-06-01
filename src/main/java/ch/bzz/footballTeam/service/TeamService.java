@@ -27,7 +27,7 @@ public class TeamService {
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
     public Response teamList(@QueryParam("sort") String sort) {
-        List<Team> teamList= DataHandler.getInstance().readAllTeams();
+        List<Team> teamList= DataHandler.readAllTeams();
 
         //sort
         if (sort!=null) {
@@ -53,7 +53,7 @@ public class TeamService {
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
     public Response teamRead(@QueryParam("uuid") String teamUUID,@QueryParam("filterN") String teamName) {
-        Team team=DataHandler.getInstance().readTeamByUUID(teamUUID);
+        Team team=DataHandler.readTeamByUUID(teamUUID);
 
         if(team==null) {
             return Response.status(400).build();

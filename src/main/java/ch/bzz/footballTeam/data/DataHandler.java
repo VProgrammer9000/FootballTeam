@@ -22,40 +22,21 @@ import java.util.List;
  * @since 24.05.2022
  */
 public class DataHandler {
-    private static DataHandler instance = null;
-    private List<Game> gameList;
-    private List<Player> playerList;
-    private List<Team> teamList;
+    private static List<Game> gameList;
+    private static List<Player> playerList;
+    private static List<Team> teamList;
 
     /**
      * private constructor defeats instantiation
      */
-    private DataHandler() {
-        setGameList(new ArrayList<>());
-        readGameJSON();
-        setPlayerList(new ArrayList<>());
-        readPlayerJSON();
-        setTeamList(new ArrayList<>());
-        readTeamJSON();
-    }
-
-    /**
-     * gets the only instance of this class
-     *
-     * @return instance of DataHandler
-     */
-    public static DataHandler getInstance() {
-        if (instance == null)
-            instance = new DataHandler();
-        return instance;
-    }
+    private DataHandler() {}
 
     /**
      * reads all Games
      *
      * @return list of games
      */
-    public List<Game> readAllGames() {
+    public static List<Game> readAllGames() {
         return getGameList();
     }
 
@@ -64,7 +45,7 @@ public class DataHandler {
      *
      * @return list of players
      */
-    public List<Player> readAllPlayers() {
+    public static List<Player> readAllPlayers() {
         return getPlayerList();
     }
 
@@ -73,7 +54,7 @@ public class DataHandler {
      *
      * @return list of teams
      */
-    public List<Team> readAllTeams() {
+    public static List<Team> readAllTeams() {
         return getTeamList();
     }
 
@@ -85,7 +66,7 @@ public class DataHandler {
      * @param gameUUID UUID of the Game
      * @return the Game (null=not found)
      */
-    public Game readGameByUUID(String gameUUID) {
+    public static Game readGameByUUID(String gameUUID) {
         Game game = null;
         for (Game entry : getGameList()) {
             if (entry.getUuid().equals(gameUUID)) {
@@ -101,7 +82,7 @@ public class DataHandler {
      * @param playerUUID UUID of the Player
      * @return the Player (null=not found)
      */
-    public Player readPlayerByUUID(String playerUUID) {
+    public static Player readPlayerByUUID(String playerUUID) {
         Player player = null;
         for (Player entry : getPlayerList()) {
             if (entry.getUuid().equals(playerUUID)) {
@@ -117,7 +98,7 @@ public class DataHandler {
      * @param teamUUID UUID of the Player
      * @return the team (null=not found)
      */
-    public Team readTeamByUUID(String teamUUID) {
+    public static Team readTeamByUUID(String teamUUID) {
         Team team = null;
         for (Team entry : getTeamList()) {
             if (entry.getUuid().equals(teamUUID)) {
@@ -132,7 +113,7 @@ public class DataHandler {
     /**
      * reads the game from the JSON-file
      */
-    private void readGameJSON() {
+    private static void readGameJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -152,7 +133,7 @@ public class DataHandler {
     /**
      * reads the players from the JSON-file
      */
-    private void readPlayerJSON() {
+    private static void readPlayerJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -172,7 +153,7 @@ public class DataHandler {
     /**
      * reads the teams from the JSON-file
      */
-    private void readTeamJSON() {
+    private static void readTeamJSON() {
         try {
             byte[] jsonData = Files.readAllBytes(
                     Paths.get(
@@ -196,7 +177,7 @@ public class DataHandler {
      *
      * @return value of gameList
      */
-    private List<Game> getGameList() {
+    private static List<Game> getGameList() {
         return gameList;
     }
 
@@ -205,8 +186,8 @@ public class DataHandler {
      *
      * @param gameList the value to set
      */
-    private void setGameList(List<Game> gameList) {
-        this.gameList = gameList;
+    private static void setGameList(List<Game> gameList) {
+        DataHandler.gameList = gameList;
     }
 
     /**
@@ -214,7 +195,7 @@ public class DataHandler {
      *
      * @return value of playerList
      */
-    private List<Player> getPlayerList() {
+    private static List<Player> getPlayerList() {
         return playerList;
     }
 
@@ -223,8 +204,8 @@ public class DataHandler {
      *
      * @param playerList the value to set
      */
-    private void setPlayerList(List<Player> playerList) {
-        this.playerList = playerList;
+    private static  void setPlayerList(List<Player> playerList) {
+        DataHandler.playerList = playerList;
     }
 
     /**
@@ -232,7 +213,7 @@ public class DataHandler {
      *
      * @return value of teamList
      */
-    private List<Team> getTeamList() {
+    private static List<Team> getTeamList() {
         return teamList;
     }
 
@@ -241,7 +222,7 @@ public class DataHandler {
      *
      * @param teamList the value to set
      */
-    private void setTeamList(List<Team> teamList) {
-        this.teamList = teamList;
+    private static void setTeamList(List<Team> teamList) {
+        DataHandler.teamList = teamList;
     }
 }
