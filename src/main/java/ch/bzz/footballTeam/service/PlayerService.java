@@ -3,18 +3,17 @@ package ch.bzz.footballTeam.service;
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Player;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.validation.Valid;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.UUID;
 
 /**
- * All Services for the Model-Class Player
+ * services for reading, adding, changing and deleting players
  *
  * @author Vivek Viruthiyel
  * @version 1.0
@@ -22,6 +21,11 @@ import java.util.List;
  */
 @Path("player")
 public class PlayerService {
+    /**
+     * reads a list of all players
+     * @param sort by which attribute is sorted
+     * @return  players as JSON
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -48,6 +52,11 @@ public class PlayerService {
         return Response.status(200).entity(playerList).build();
     }
 
+    /**
+     * reads a player identified by the uuid
+     * @param playerUUID the key
+     * @return player
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -61,4 +70,73 @@ public class PlayerService {
         return Response.status(200).entity(player).build();
     }
 
+
+
+    /**
+     * inserts a new player
+     * @return Response
+     */
+    @POST
+    @Path("create")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertPlayer(
+            @Valid @BeanParam Player player,
+            @FormParam("playerUUID") String playerUUID
+    ) {
+        player.setUuid(UUID.randomUUID().toString());
+
+        DataHandler.insertPlayer(player);
+        return Response
+                .status(200)
+                .entity("")
+                .build();
+    }
+
+    /**
+     * updates a new player
+     * @return Response
+     */
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updatePlayer(
+            @Valid @BeanParam Player player
+    ) {
+        int httpStatus = 200;
+        Player oldPlayer = DataHandler.readPlayerByUUID(player.getUuid());
+        if (player != null){
+            oldPlayer.setName(player.getName());
+            oldPlayer.setPrename(player.getPrename());
+            oldPlayer.setNumber(player.getNumber());
+
+            DataHandler.updatePlayer();
+        } else {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
+
+    /**
+     * deletes a player identified by its uuid
+     * @param playerUUID  the key
+     * @return  Response
+     */
+    @DELETE
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteBook(
+            @QueryParam("uuid") String playerUUID
+    ) {
+        int httpStatus = 200;
+        if (!DataHandler.deletePlayer(playerUUID)) {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
 }

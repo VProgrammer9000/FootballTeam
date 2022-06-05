@@ -1,5 +1,9 @@
 package ch.bzz.footballTeam.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
 import java.util.ArrayList;
 
 /**
@@ -10,11 +14,26 @@ import java.util.ArrayList;
  * @since 24.05.2022
  */
 public class Team {
-
-    private String name;
-    private int amountWins;
-    private int amountLost;
+    //TODO Regexing correctly
     private ArrayList<String> allPlayer;
+
+    @FormParam("name")
+    @NotEmpty
+    @Size(min = 1,max = 100)
+    private String name;
+
+    @FormParam("amountWins")
+    @NotEmpty
+    @DecimalMin(value="0")
+    private int amountWins;
+
+    @FormParam("amountLost")
+    @NotEmpty
+    @DecimalMin(value="0")
+    private int amountLost;
+
+    @FormParam("uuid")
+    @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String uuid;
 
     /**

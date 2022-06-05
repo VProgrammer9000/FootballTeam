@@ -3,18 +3,18 @@ package ch.bzz.footballTeam.service;
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Game;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.QueryParam;
+import javax.validation.Valid;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
+import java.util.UUID;
 
 /**
- * All Services for the Model-Class Game
+ * services for reading, adding, changing and deleting games
+ *
  *
  * @author Vivek Viruthiyel
  * @version 1.0
@@ -23,6 +23,12 @@ import java.util.List;
 
 @Path("game")
 public class GameService {
+
+    /**
+     * reads a list of all games
+     * @param sort by which attribute is sorted
+     * @return  games as JSON
+     */
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
@@ -45,6 +51,11 @@ public class GameService {
         return Response.status(200).entity(gameList).build();
     }
 
+    /**
+     * reads a game identified by the uuid
+     * @param gameUUID the key
+     * @return game
+     */
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
@@ -56,5 +67,76 @@ public class GameService {
         }
 
         return Response.status(200).entity(game).build();
+    }
+
+
+
+    /**
+     * inserts a new game
+     * @return Response
+     */
+    @POST
+    @Path("create")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response insertGame(
+            @Valid @BeanParam Game game
+    ) {
+        game.setUuid(UUID.randomUUID().toString());
+
+        DataHandler.insertGame(game);
+        return Response
+                .status(200)
+                .entity("")
+                .build();
+    }
+
+    /**
+     * updates a new game
+     * @return Response
+     */
+    @PUT
+    @Path("update")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response updateGame(
+            @Valid @BeanParam Game game
+    ) {
+        int httpStatus = 200;
+        Game oldGame = DataHandler.readGameByUUID(game.getUuid());
+        if (game != null) {
+            oldGame.setTeam1(game.getTeam1());
+            oldGame.setTeam2(game.getTeam2());
+            oldGame.setPointsTeam1(game.getPointsTeam1());
+            oldGame.setPointsTeam2(game.getPointsTeam2());
+            oldGame.setDate(game.getDate());
+
+            DataHandler.updateGame();
+        } else {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
+    }
+
+    /**
+     * deletes a game identified by its uuid
+     * @param gameUUID  the key
+     * @return  Response
+     */
+    @DELETE
+    @Path("delete")
+    @Produces(MediaType.TEXT_PLAIN)
+    public Response deleteGame(
+            @QueryParam("uuid") String gameUUID
+    ) {
+        int httpStatus = 200;
+        if (!DataHandler.deleteGame(gameUUID)) {
+            httpStatus = 410;
+        }
+        return Response
+                .status(httpStatus)
+                .entity("")
+                .build();
     }
 }

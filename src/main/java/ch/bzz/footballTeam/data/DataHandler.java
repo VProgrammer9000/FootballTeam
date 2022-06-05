@@ -6,9 +6,12 @@ import ch.bzz.footballTeam.model.Team;
 
 import ch.bzz.footballTeam.service.Config;
 
+import com.fasterxml.jackson.core.util.DefaultPrettyPrinter;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectWriter;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -26,10 +29,23 @@ public class DataHandler {
     private static List<Player> playerList;
     private static List<Team> teamList;
 
+
     /**
      * private constructor defeats instantiation
      */
     private DataHandler() {}
+
+
+    /**
+     * initializes the lists
+     */
+    public static void initLists() {
+        DataHandler.setGameList(null);
+        DataHandler.setPlayerList(null);
+        DataHandler.setTeamList(null);
+    }
+
+
 
     /**
      * reads all Games
@@ -39,26 +55,6 @@ public class DataHandler {
     public static List<Game> readAllGames() {
         return getGameList();
     }
-
-    /**
-     * reads all Players
-     *
-     * @return list of players
-     */
-    public static List<Player> readAllPlayers() {
-        return getPlayerList();
-    }
-
-    /**
-     * reads all Teams
-     *
-     * @return list of teams
-     */
-    public static List<Team> readAllTeams() {
-        return getTeamList();
-    }
-
-
 
     /**
      * reads a game by its uuid
@@ -74,6 +70,49 @@ public class DataHandler {
             }
         }
         return game;
+    }
+
+    /**
+     * inserts a new game into the gameList
+     *
+     * @param game the game to be saved
+     */
+    public static void insertGame(Game game) {
+        getGameList().add(game);
+        writeGameJSON();
+    }
+
+    /**
+     * updates the gameList
+     */
+    public static void updateGame() {
+        writeGameJSON();
+    }
+
+    /**
+     * deletes a game identified by the gameUID
+     * @param gameUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteGame(String gameUUID) {
+        Game game = readGameByUUID(gameUUID);
+        if (game != null) {
+            getGameList().remove(game);
+            writeGameJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * reads all Players
+     *
+     * @return list of players
+     */
+    public static List<Player> readAllPlayers() {
+        return getPlayerList();
     }
 
     /**
@@ -93,6 +132,49 @@ public class DataHandler {
     }
 
     /**
+     * inserts a new player into the playerList
+     *
+     * @param player the player to be saved
+     */
+    public static void insertPlayer(Player player) {
+        getPlayerList().add(player);
+        writePlayerJSON();
+    }
+
+    /**
+     * updates the playerList
+     */
+    public static void updatePlayer() {
+        writePlayerJSON();
+    }
+
+    /**
+     * deletes a player identified by the playerUUID
+     * @param playerUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deletePlayer(String playerUUID) {
+        Player player = readPlayerByUUID(playerUUID);
+        if (player != null) {
+            getPlayerList().remove(player);
+            writePlayerJSON();
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * reads all Teams
+     *
+     * @return list of teams
+     */
+    public static List<Team> readAllTeams() {
+        return getTeamList();
+    }
+
+    /**
      * reads a game by its uuid
      *
      * @param teamUUID UUID of the Player
@@ -106,6 +188,39 @@ public class DataHandler {
             }
         }
         return team;
+    }
+
+    /**
+     * inserts a new team into the teamList
+     *
+     * @param team the team to be saved
+     */
+    public static void insertTeam(Team team) {
+        getTeamList().add(team);
+        writeTeamJSON();
+    }
+
+    /**
+     * updates the teamList
+     */
+    public static void updateTeam() {
+        writeTeamJSON();
+    }
+
+    /**
+     * deletes a team identified by the teamUUID
+     * @param teamUUID  the key
+     * @return  success=true/false
+     */
+    public static boolean deleteTeam(String teamUUID) {
+        Team team = readTeamByUUID(teamUUID);
+        if (team != null) {
+            getTeamList().remove(team);
+            writeTeamJSON();
+            return true;
+        } else {
+            return false;
+        }
     }
 
 
@@ -125,6 +240,25 @@ public class DataHandler {
             for (Game game : games) {
                 getGameList().add(game);
             }
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
+     * writes the gameList to the JSON-file
+     */
+    private static void writeGameJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("gameJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getGameList());
         } catch (IOException ex) {
             ex.printStackTrace();
         }
@@ -151,6 +285,25 @@ public class DataHandler {
     }
 
     /**
+     * writes the playerList to the JSON-file
+     */
+    private static void writePlayerJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("playerJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getPlayerList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    /**
      * reads the teams from the JSON-file
      */
     private static void readTeamJSON() {
@@ -170,6 +323,25 @@ public class DataHandler {
         }
     }
 
+    /**
+     * writes the teamList to the JSON-file
+     */
+    private static void writeTeamJSON() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        ObjectWriter objectWriter = objectMapper.writer(new DefaultPrettyPrinter());
+        FileOutputStream fileOutputStream = null;
+        Writer fileWriter;
+
+        String bookPath = Config.getProperty("teamJSON");
+        try {
+            fileOutputStream = new FileOutputStream(bookPath);
+            fileWriter = new BufferedWriter(new OutputStreamWriter(fileOutputStream, StandardCharsets.UTF_8));
+            objectWriter.writeValue(fileWriter, getTeamList());
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
 
 
     /**
@@ -178,6 +350,10 @@ public class DataHandler {
      * @return value of gameList
      */
     private static List<Game> getGameList() {
+        if (gameList==null){
+            setGameList(new ArrayList<>());
+            readGameJSON();
+        }
         return gameList;
     }
 
@@ -196,6 +372,10 @@ public class DataHandler {
      * @return value of playerList
      */
     private static List<Player> getPlayerList() {
+        if (playerList==null) {
+            setPlayerList(new ArrayList<>());
+            readPlayerJSON();
+        }
         return playerList;
     }
 
@@ -214,6 +394,10 @@ public class DataHandler {
      * @return value of teamList
      */
     private static List<Team> getTeamList() {
+        if (teamList==null){
+            setTeamList(new ArrayList<>());
+            readTeamJSON();
+        }
         return teamList;
     }
 
