@@ -46,21 +46,34 @@ public class TestService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response restore() {
         try {
-            java.nio.file.Path path = Paths.get(Config.getProperty("bookJSON"));
+            java.nio.file.Path path = Paths.get(Config.getProperty("gameJSON"));
             String filename = path.getFileName().toString();
             String folder = path.getParent().toString();
 
-            byte[] bookJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
-            FileOutputStream fileOutputStream = new FileOutputStream(Config.getProperty("bookJSON"));
-            fileOutputStream.write(bookJSON);
+            byte[] gameJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            FileOutputStream fileOutputStream = new FileOutputStream(Config.getProperty("gameJSON"));
+            fileOutputStream.write(gameJSON);
 
-            path = Paths.get(Config.getProperty("publisherJSON"));
+
+
+            path = Paths.get(Config.getProperty("playerJSON"));
             filename = path.getFileName().toString();
             folder = path.getParent().toString();
 
-            byte[] publisherJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
-            fileOutputStream = new FileOutputStream(Config.getProperty("publisherJSON"));
-            fileOutputStream.write(publisherJSON);
+            byte[] playerJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            fileOutputStream = new FileOutputStream(Config.getProperty("playerJSON"));
+            fileOutputStream.write(playerJSON);
+
+
+
+            path = Paths.get(Config.getProperty("teamJSON"));
+            filename = path.getFileName().toString();
+            folder = path.getParent().toString();
+
+            byte[] teamJSON = Files.readAllBytes(Paths.get(folder, "backup", filename));
+            fileOutputStream = new FileOutputStream(Config.getProperty("teamJSON"));
+            fileOutputStream.write(teamJSON);
+
         } catch (IOException e) {
             e.printStackTrace();
         }

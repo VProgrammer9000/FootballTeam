@@ -84,10 +84,8 @@ public class GameService {
         game.setUuid(UUID.randomUUID().toString());
 
         DataHandler.insertGame(game);
-        return Response
-                .status(200)
-                .entity("")
-                .build();
+
+        return Response.status(200).entity("").build();
     }
 
     /**
@@ -105,18 +103,14 @@ public class GameService {
         if (game != null) {
             oldGame.setTeam1(game.getTeam1());
             oldGame.setTeam2(game.getTeam2());
-            oldGame.setPointsTeam1(game.getPointsTeam1());
-            oldGame.setPointsTeam2(game.getPointsTeam2());
+            oldGame.setGameResult(game.getGameResult());
             oldGame.setDate(game.getDate());
 
             DataHandler.updateGame();
         } else {
             httpStatus = 410;
         }
-        return Response
-                .status(httpStatus)
-                .entity("")
-                .build();
+        return Response.status(httpStatus).entity("").build();
     }
 
     /**
@@ -131,12 +125,11 @@ public class GameService {
             @QueryParam("uuid") String gameUUID
     ) {
         int httpStatus = 200;
+
         if (!DataHandler.deleteGame(gameUUID)) {
             httpStatus = 410;
         }
-        return Response
-                .status(httpStatus)
-                .entity("")
-                .build();
+
+        return Response.status(httpStatus).entity("").build();
     }
 }

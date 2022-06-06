@@ -28,9 +28,9 @@ public class Game {
     @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String team2;
 
-    //TODO see anwser of Suter
-    private int pointsTeam1;
-    private int pointsTeam2;
+    @FormParam("gameResult")
+    @Pattern(regexp="[0-9]{1,2}-[0-9]{1,2}")
+    private String gameResult;
 
     @FormParam("date")
     @JsonDeserialize(using = LocalDateDeserializer.class)
@@ -79,39 +79,21 @@ public class Game {
     }
 
     /**
-     * gets the Points of the first Team from the Game-object
+     * gets the gameResult
      *
-     * @return pointsTeam1
+     * @return gameResult
      */
-    public int getPointsTeam1() {
-        return pointsTeam1;
+    public String getGameResult() {
+        return gameResult;
     }
 
     /**
-     * sets pointsTeam1
+     * sets gameResult
      *
-     * @param pointsTeam1 the value to set
+     * @param gameResult the value to set
      */
-    public void setPointsTeam1(int pointsTeam1) {
-        this.pointsTeam1 = pointsTeam1;
-    }
-
-    /**
-     * gets the first Team from the Game-object
-     *
-     * @return Team1
-     */
-    public int getPointsTeam2() {
-        return pointsTeam2;
-    }
-
-    /**
-     * sets pointsTeam2
-     *
-     * @param pointsTeam2 the value to set
-     */
-    public void setPointsTeam2(int pointsTeam2) {
-        this.pointsTeam2 = pointsTeam2;
+    public void setGameResult(String gameResult) {
+        this.gameResult = gameResult;
     }
 
     /**
