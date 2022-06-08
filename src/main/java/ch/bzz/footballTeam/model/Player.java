@@ -22,7 +22,6 @@ public class Player {
     private String name;
 
     @FormParam("number")
-    @NotEmpty
     @DecimalMax(value="99")
     @DecimalMin(value="1")
     private int number;

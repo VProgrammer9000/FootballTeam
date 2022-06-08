@@ -23,12 +23,10 @@ public class Team {
     private String name;
 
     @FormParam("amountWins")
-    @NotEmpty
     @DecimalMin(value="0")
     private int amountWins;
 
     @FormParam("amountLost")
-    @NotEmpty
     @DecimalMin(value="0")
     private int amountLost;
 
@@ -107,6 +105,26 @@ public class Team {
     public void setAllPlayer(ArrayList<String> allPlayer) {
         this.allPlayer = allPlayer;
     }
+
+    /**
+     * add a player
+     *
+     * @param player new Player
+     */
+    public void addPlayer(String player) {
+        allPlayer.add(player);
+    }
+
+    /**
+     * delete a player by value
+     *
+     * @param player the value to delete
+     */
+    public void deletePlayer(String player) {
+        allPlayer.remove(player);
+    }
+
+
 
     /**
      * gets Uuid from the Team-object
