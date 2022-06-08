@@ -35,7 +35,6 @@ public class DataHandler {
      */
     private DataHandler() {}
 
-
     /**
      * initializes the lists
      */

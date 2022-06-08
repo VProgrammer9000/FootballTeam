@@ -4,6 +4,7 @@ import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Game;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -122,6 +123,7 @@ public class GameService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteGame(
+            @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @QueryParam("uuid") String gameUUID
     ) {
         int httpStatus = 200;

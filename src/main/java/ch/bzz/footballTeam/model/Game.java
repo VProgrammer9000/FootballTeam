@@ -2,7 +2,6 @@ package ch.bzz.footballTeam.model;
 
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
@@ -32,7 +31,6 @@ public class Game {
     @Pattern(regexp="[0-9]{1,2}-[0-9]{1,2}")
     private String gameResult;
 
-    //TODO ask Suter why date = null when I create a new Game
     @FormParam("date")
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)

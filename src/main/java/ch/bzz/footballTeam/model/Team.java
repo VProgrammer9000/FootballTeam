@@ -1,10 +1,8 @@
 package ch.bzz.footballTeam.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.validation.constraints.*;
 import javax.ws.rs.FormParam;
-import java.util.ArrayList;
+import java.util.List;
 
 /**
  * The Model-Class Team is storing data for the Server.
@@ -14,12 +12,12 @@ import java.util.ArrayList;
  * @since 24.05.2022
  */
 public class Team {
-    //TODO Regexing correctly
-    private ArrayList<String> allPlayer;
+
+    private List<String> allPlayer;
 
     @FormParam("name")
     @NotEmpty
-    @Size(min = 1,max = 100)
+    @Size(min=1,max = 100)
     private String name;
 
     @FormParam("amountWins")
@@ -93,7 +91,7 @@ public class Team {
      *
      * @return players
      */
-    public ArrayList<String> getAllPlayer() {
+    public List<String> getAllPlayer() {
         return allPlayer;
     }
 
@@ -102,7 +100,7 @@ public class Team {
      *
      * @param allPlayer the value to set
      */
-    public void setAllPlayer(ArrayList<String> allPlayer) {
+    public void setAllPlayer(List<String> allPlayer) {
         this.allPlayer = allPlayer;
     }
 
@@ -123,8 +121,6 @@ public class Team {
     public void deletePlayer(String player) {
         allPlayer.remove(player);
     }
-
-
 
     /**
      * gets Uuid from the Team-object

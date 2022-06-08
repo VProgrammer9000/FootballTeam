@@ -22,8 +22,8 @@ public class Player {
     private String name;
 
     @FormParam("number")
-    @DecimalMax(value="99")
     @DecimalMin(value="1")
+    @DecimalMax(value="99")
     private int number;
 
     @FormParam("uuid")

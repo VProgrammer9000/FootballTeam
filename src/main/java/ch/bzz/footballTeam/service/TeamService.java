@@ -4,6 +4,7 @@ import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Team;
 
 import javax.validation.Valid;
+import javax.validation.constraints.Pattern;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -89,6 +90,8 @@ public class TeamService {
         team.setUuid(UUID.randomUUID().toString());
 
         DataHandler.insertTeam(team);
+        team.setAllPlayer(new ArrayList<>());
+
         return Response
                 .status(200)
                 .entity("")
@@ -132,6 +135,7 @@ public class TeamService {
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteTeam(
+            @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
             @QueryParam("uuid") String teamUUID
     ) {
         int httpStatus = 200;
