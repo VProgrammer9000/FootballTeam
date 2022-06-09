@@ -13,12 +13,12 @@ import javax.ws.rs.FormParam;
 public class Player {
     @FormParam("prename")
     @NotEmpty
-    @Size(min = 1,max = 100)
+    @Size(min = 1,max = 32)
     private String prename;
 
     @FormParam("name")
     @NotEmpty
-    @Size(min = 1,max = 100)
+    @Size(min = 1,max = 32)
     private String name;
 
     @FormParam("number")
