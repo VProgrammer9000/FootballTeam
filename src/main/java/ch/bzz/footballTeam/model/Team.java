@@ -12,8 +12,9 @@ import java.util.List;
  * @since 24.05.2022
  */
 public class Team {
-
-    private List<String> allPlayer;
+    @FormParam("player")
+    private List<@Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
+            String> allPlayer;
 
     @FormParam("name")
     @NotEmpty
