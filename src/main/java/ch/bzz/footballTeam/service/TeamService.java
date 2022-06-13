@@ -75,9 +75,6 @@ public class TeamService {
     }
 
 
-
-
-
     /**
      * inserts a new team
      * @return Response
@@ -109,22 +106,20 @@ public class TeamService {
     public Response updateTeam(
             @Valid @BeanParam Team team
     ) {
-        int httpStatus = 200;
+
         Team oldTeam = DataHandler.readTeamByUUID(team.getUuid());
-        if (team != null) {
+
+        if (oldTeam == null) {
+            return Response.status(410).entity("").build();
+        }
             oldTeam.setAllPlayer(team.getAllPlayer());
             oldTeam.setAmountWins(team.getAmountWins());
             oldTeam.setAmountLost(team.getAmountLost());
             oldTeam.setName(team.getName());
 
             DataHandler.updateTeam();
-        } else {
-            httpStatus = 410;
-        }
-        return Response
-                .status(httpStatus)
-                .entity("")
-                .build();
+
+        return Response.status(200).entity("").build();
     }
 
     /**

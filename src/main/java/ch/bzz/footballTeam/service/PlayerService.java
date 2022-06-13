@@ -104,21 +104,18 @@ public class PlayerService {
     public Response updatePlayer(
             @Valid @BeanParam Player player
     ) {
-        int httpStatus = 200;
         Player oldPlayer = DataHandler.readPlayerByUUID(player.getUuid());
-        if (player != null){
-            oldPlayer.setName(player.getName());
-            oldPlayer.setPrename(player.getPrename());
-            oldPlayer.setNumber(player.getNumber());
 
-            DataHandler.updatePlayer();
-        } else {
-            httpStatus = 410;
+        if (oldPlayer == null){
+            return Response.status(410).entity("").build();
         }
-        return Response
-                .status(httpStatus)
-                .entity("")
-                .build();
+
+        oldPlayer.setName(player.getName());
+        oldPlayer.setPrename(player.getPrename());
+        oldPlayer.setNumber(player.getNumber());
+        DataHandler.updatePlayer();
+
+        return Response.status(200).entity("").build();
     }
 
     /**

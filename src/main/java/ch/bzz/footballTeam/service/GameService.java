@@ -100,19 +100,18 @@ public class GameService {
     public Response updateGame(
             @Valid @BeanParam Game game
     ) {
-        int httpStatus = 200;
         Game oldGame = DataHandler.readGameByUUID(game.getUuid());
-        if (game != null) {
+        if (oldGame == null) {
+            return Response.status(410).entity("").build();
+        }
             oldGame.setTeam1(game.getTeam1());
             oldGame.setTeam2(game.getTeam2());
             oldGame.setGameResult(game.getGameResult());
             oldGame.setDate(game.getDate());
 
             DataHandler.updateGame();
-        } else {
-            httpStatus = 410;
-        }
-        return Response.status(httpStatus).entity("").build();
+
+        return Response.status(200).entity("").build();
     }
 
     /**
