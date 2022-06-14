@@ -40,7 +40,6 @@ public class Game {
     @Pattern(regexp="[0-9]{1,2}-[0-9]{1,2}")
     private String gameResult;
 
-    @FormParam("date")
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
