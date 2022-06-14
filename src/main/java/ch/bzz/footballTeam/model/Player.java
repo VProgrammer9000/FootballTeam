@@ -1,16 +1,33 @@
 package ch.bzz.footballTeam.model;
 
+import javax.validation.constraints.*;
+import javax.ws.rs.FormParam;
+
 /**
  * The Model-Class Player is storing data for the Server.
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 24.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 public class Player {
+    @FormParam("prename")
+    @NotEmpty
+    @Size(min = 1,max = 32)
     private String prename;
+
+    @FormParam("name")
+    @NotEmpty
+    @Size(min = 1,max = 32)
     private String name;
+
+    @FormParam("number")
+    @DecimalMin(value="1")
+    @DecimalMax(value="99")
     private int number;
+
+    @FormParam("uuid")
+    @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String uuid;
 
     /**

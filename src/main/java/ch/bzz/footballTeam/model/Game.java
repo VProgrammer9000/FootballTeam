@@ -7,25 +7,42 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.ws.rs.FormParam;
 import java.time.LocalDate;
 
 /**
  * The Model-Class Game is storing data for the Server.
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 24.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 public class Game {
+
+    @FormParam("uuid")
+    @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
+    private String uuid;
+
+    @NotEmpty
+    @FormParam("team1")
+    @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String team1;
+
+    @NotEmpty
+    @FormParam("team2")
+    @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
     private String team2;
-    private int pointsTeam1;
-    private int pointsTeam2;
+
+    @FormParam("gameResult")
+    @Pattern(regexp="[0-9]{1,2}-[0-9]{1,2}")
+    private String gameResult;
+
     @JsonDeserialize(using = LocalDateDeserializer.class)
     @JsonSerialize(using = LocalDateSerializer.class)
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate date;
-    private String uuid;
 
     /**
      * gets the first Team (UUID) from the Game-object
@@ -34,51 +51,6 @@ public class Game {
      */
     public String getTeam1() {
         return team1;
-    }
-
-    /**
-     * gets the second Team (UUID) from the Game-object
-     *
-     * @return team2
-     */
-    public String getTeam2() {
-        return team2;
-    }
-
-    /**
-     * gets the Points of the first Team from the Game-object
-     *
-     * @return pointsTeam1
-     */
-    public int getPointsTeam1() {
-        return pointsTeam1;
-    }
-
-    /**
-     * gets the first Team from the Game-object
-     *
-     * @return Team1
-     */
-    public int getPointsTeam2() {
-        return pointsTeam2;
-    }
-
-    /**
-     * gets the Date from the Game-object
-     *
-     * @return date
-     */
-    public LocalDate getDate() {
-        return date;
-    }
-
-    /**
-     * gets the UUID from the Game-object
-     *
-     * @return UUID
-     */
-    public String getUuid() {
-        return uuid;
     }
 
     /**
@@ -91,6 +63,15 @@ public class Game {
     }
 
     /**
+     * gets the second Team (UUID) from the Game-object
+     *
+     * @return team2
+     */
+    public String getTeam2() {
+        return team2;
+    }
+
+    /**
      * sets team2 (UUID)
      *
      * @param team2 the value to set
@@ -100,21 +81,30 @@ public class Game {
     }
 
     /**
-     * sets pointsTeam1
+     * gets the gameResult
      *
-     * @param pointsTeam1 the value to set
+     * @return gameResult
      */
-    public void setPointsTeam1(int pointsTeam1) {
-        this.pointsTeam1 = pointsTeam1;
+    public String getGameResult() {
+        return gameResult;
     }
 
     /**
-     * sets pointsTeam2
+     * sets gameResult
      *
-     * @param pointsTeam2 the value to set
+     * @param gameResult the value to set
      */
-    public void setPointsTeam2(int pointsTeam2) {
-        this.pointsTeam2 = pointsTeam2;
+    public void setGameResult(String gameResult) {
+        this.gameResult = gameResult;
+    }
+
+    /**
+     * gets the Date from the Game-object
+     *
+     * @return date
+     */
+    public LocalDate getDate() {
+        return date;
     }
 
     /**
@@ -124,6 +114,15 @@ public class Game {
      */
     public void setDate(LocalDate date) {
         this.date = date;
+    }
+
+    /**
+     * gets the UUID from the Game-object
+     *
+     * @return UUID
+     */
+    public String getUuid() {
+        return uuid;
     }
 
     /**
