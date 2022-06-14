@@ -6,6 +6,81 @@
 	},
 	"item": [
 		{
+			"name": "0. TestServices",
+			"item": [
+				{
+					"name": "0.1 Testservice",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is as expected\", function () {",
+									"pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FootballTeam-1.0/resource/test/test",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FootballTeam-1.0",
+								"resource",
+								"test",
+								"test"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "0.2 Restore",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"response is as expected\", function () {",
+									"pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/FootballTeam-1.0/resource/test/restore",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"FootballTeam-1.0",
+								"resource",
+								"test",
+								"restore"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "1. Get Services (Milestone 1)",
 			"item": [
 				{
@@ -16,6 +91,19 @@
 							"item": [
 								{
 									"name": "1.1.1.1 read list of games",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -39,6 +127,19 @@
 								},
 								{
 									"name": "1.1.1.2 read list of teams",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -62,6 +163,19 @@
 								},
 								{
 									"name": "1.1.1.3 read list of players",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -93,6 +207,19 @@
 									"item": [
 										{
 											"name": "1.1.2.1.1 read list of games sorted by date",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -128,6 +255,19 @@
 									"item": [
 										{
 											"name": "1.1.2.2.1 read list of teams sorted by name",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -157,6 +297,19 @@
 										},
 										{
 											"name": "1.1.2.2.2 read list of teams sorted by amountWins",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -186,6 +339,19 @@
 										},
 										{
 											"name": "1.1.2.2.3 read list of teams sorted by amountLost",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -241,6 +407,19 @@
 									"item": [
 										{
 											"name": "1.1.2.3.1 read list of player sorted by name",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -270,6 +449,19 @@
 										},
 										{
 											"name": "1.1.2.3.2 read list of player sorted by prename",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -299,6 +491,19 @@
 										},
 										{
 											"name": "1.1.2.3.3 read list of player sorted by number",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(200);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
 											"request": {
 												"method": "GET",
 												"header": [],
@@ -513,6 +718,19 @@
 							"item": [
 								{
 									"name": "1.2.1.1 read a game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -542,6 +760,19 @@
 								},
 								{
 									"name": "1.2.1.2 read a team",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -571,6 +802,19 @@
 								},
 								{
 									"name": "1.2.1.3 read a player",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
 									"request": {
 										"method": "GET",
 										"header": [],
@@ -852,15 +1096,3387 @@
 			"description": "All get Services (Milestone 1)"
 		},
 		{
-			"name": "0.1 Testservice",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": ""
+			"name": "2. ADD/UPDATE/DELETE (Milestone 2)",
+			"item": [
+				{
+					"name": "1. create",
+					"item": [
+						{
+							"name": "1. working input",
+							"item": [
+								{
+									"name": "2.1.1.1 create Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "team1",
+													"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+													"type": "text"
+												},
+												{
+													"key": "team2",
+													"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+													"type": "text"
+												},
+												{
+													"key": "gameResult",
+													"value": "3-2",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "2022-02-11",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"game",
+												"create"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.1.1.2 create Team",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "name",
+													"value": "Real Madrid",
+													"type": "text"
+												},
+												{
+													"key": "amountWins",
+													"value": "0",
+													"type": "text"
+												},
+												{
+													"key": "amountLost",
+													"value": "0",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"team",
+												"create"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.1.1.3 create Player",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "prename",
+													"value": "Gareth",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Bale",
+													"type": "text"
+												},
+												{
+													"key": "number",
+													"value": "11",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"player",
+												"create"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2. wrong input",
+							"item": [
+								{
+									"name": "1. Game",
+									"item": [
+										{
+											"name": "2.1.2.1.1 team1 empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.2 team1 regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.3 team2 empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.4 team2 regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.5 gameResult regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.6 date regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "1002-2-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.1.7 date Annotation",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "3-2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "1022-02-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "2. Team",
+									"item": [
+										{
+											"name": "2.1.2.2.1 name  Empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "name",
+															"value": "",
+															"description": "too long",
+															"type": "text"
+														},
+														{
+															"key": "amountWins",
+															"value": "0",
+															"type": "text"
+														},
+														{
+															"key": "amountLost",
+															"value": "0",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.2.2 name too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "name",
+															"value": "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+															"description": "too long",
+															"type": "text"
+														},
+														{
+															"key": "amountWins",
+															"value": "0",
+															"type": "text"
+														},
+														{
+															"key": "amountLost",
+															"value": "0",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.2.3 amountWins too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "name",
+															"value": "Real Madrid",
+															"type": "text"
+														},
+														{
+															"key": "amountWins",
+															"value": "-1",
+															"type": "text"
+														},
+														{
+															"key": "amountLost",
+															"value": "0",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.2.4 amountLoses too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "name",
+															"value": "Real Madrid",
+															"type": "text"
+														},
+														{
+															"key": "amountWins",
+															"value": "0",
+															"type": "text"
+														},
+														{
+															"key": "amountLost",
+															"value": "-1",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "3. Player",
+									"item": [
+										{
+											"name": "2.1.2.3.1 prename empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Bale",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.3.2 prename too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "1234567890.1234567890.1234567890.1234567890.1234567890.1234567890.1234567890",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Bale",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.3.3 name Empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "Gareth",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.3.4 name too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "Gareth",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "1234567890.1234567890.1234567890.1234567890.1234567890.1234567890.1234567890",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.3.5 number too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "Gareth",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Bale",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "-11",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.1.2.3.6 number too high",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "prename",
+															"value": "Gareth",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Bale",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "110",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"create"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "2. update",
+					"item": [
+						{
+							"name": "1. working input",
+							"item": [
+								{
+									"name": "2.2.1.1 update Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+													"type": "text"
+												},
+												{
+													"key": "team1",
+													"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+													"type": "text"
+												},
+												{
+													"key": "team2",
+													"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+													"type": "text"
+												},
+												{
+													"key": "gameResult",
+													"value": "2-1",
+													"type": "text"
+												},
+												{
+													"key": "date",
+													"value": "2020-11-11",
+													"type": "default"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"game",
+												"update"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.2.1.2 update Team",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+													"type": "default"
+												},
+												{
+													"key": "name",
+													"value": "Manchester United",
+													"type": "default"
+												},
+												{
+													"key": "amountWins",
+													"value": "1",
+													"type": "default"
+												},
+												{
+													"key": "amountLost",
+													"value": "2",
+													"type": "default"
+												},
+												{
+													"key": "player",
+													"value": "f4ba965e-d9bb-11ec-9d64-0242ac120002",
+													"type": "default"
+												},
+												{
+													"key": "player",
+													"value": "a00dff12-3aa2-4dd2-b574-83eaaa6693c1",
+													"type": "default"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"team",
+												"update"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.2.1.3 update Player",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "uuid",
+													"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+													"type": "default"
+												},
+												{
+													"key": "prename",
+													"value": "Sergio",
+													"type": "text"
+												},
+												{
+													"key": "name",
+													"value": "Ramos",
+													"type": "text"
+												},
+												{
+													"key": "number",
+													"value": "9",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"player",
+												"update"
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2. wrong input",
+							"item": [
+								{
+									"name": "1. Game",
+									"item": [
+										{
+											"name": "2.2.2.1.1 uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.2 uuid not Existing",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(410);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.3 team1 empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.4 team1 regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.5 team2 empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.6 team2 regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.7 gameResult regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-11-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.8 date regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "2020-1-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.1.9 date Annotation",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team1",
+															"value": "907271a8-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "team2",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "text"
+														},
+														{
+															"key": "gameResult",
+															"value": "2-1",
+															"type": "text"
+														},
+														{
+															"key": "date",
+															"value": "1020-01-11",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "2. Team",
+									"item": [
+										{
+											"name": "2.2.2.2.1 uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "Manchester United",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.2 uuid not existing",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(410);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120004",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "Manchester United",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.3 name empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.4 name too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.5 amountWins too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "Manchester United",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "-1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.6 amountLost too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "Manchester United",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "-2",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.2.7 player regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "name",
+															"value": "Manchester United",
+															"type": "default"
+														},
+														{
+															"key": "amountWins",
+															"value": "1",
+															"type": "default"
+														},
+														{
+															"key": "amountLost",
+															"value": "2",
+															"type": "default"
+														},
+														{
+															"key": "player",
+															"value": "qwfns",
+															"type": "default"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "3. Player",
+									"item": [
+										{
+											"name": "2.2.2.3.1 uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.2 uuid not exisiting",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(410);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "9d3cf7f0-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.3 prename empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.4 prename too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "1234567890.1234567890.1234567890.1234567890.1234567890.1234567890.1234567890",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.5 name empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.6 name too long",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "1234567890.1234567890.1234567890.1234567890.1234567890.1234567890.1234567890",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.7 number too small",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "-9",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.2.2.3.8 number too high",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002",
+															"type": "default"
+														},
+														{
+															"key": "prename",
+															"value": "Sergio",
+															"type": "text"
+														},
+														{
+															"key": "name",
+															"value": "Ramos",
+															"type": "text"
+														},
+														{
+															"key": "number",
+															"value": "900",
+															"type": "text"
+														}
+													]
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"update"
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "3. delete",
+					"item": [
+						{
+							"name": "1. working input",
+							"item": [
+								{
+									"name": "2.3.1.1 delete Game",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-9d64-0242ac120002",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"game",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "uuid",
+													"value": "dac43c46-d9bb-11ec-9d64-0242ac120002"
+												}
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.3.1.2 delete Team",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"team",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "uuid",
+													"value": "907271a8-d9bb-11ec-9d64-0242ac120002"
+												}
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								},
+								{
+									"name": "2.3.1.3 delete Player",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"response is as expected\", function () {",
+													"pm.response.to.have.status(200);",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": []
+										},
+										"url": {
+											"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-9d64-0242ac120002",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8080",
+											"path": [
+												"FootballTeam-1.0",
+												"resource",
+												"player",
+												"delete"
+											],
+											"query": [
+												{
+													"key": "uuid",
+													"value": "fe733f7a-d9bb-11ec-9d64-0242ac120002"
+												}
+											]
+										},
+										"description": "erstellt ein Book\n"
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "2. wrong input",
+							"item": [
+								{
+									"name": "1. Game",
+									"item": [
+										{
+											"name": "2.3.2.1.1 delete Game uuid empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": ""
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.3.2.1.2 delete Game uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"game",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": "dac43c46-d9bb-11ec-"
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "2. Team",
+									"item": [
+										{
+											"name": "2.3.2.2.1 delete Team  uuid empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": ""
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.3.2.2.2 delete Team  uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"team",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": "907271a8-d9bb-11ec-"
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "3. Player",
+									"item": [
+										{
+											"name": "2.3.2.3.1 delete Player  uuid empty",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": ""
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										},
+										{
+											"name": "2.3.2.3.2 delete Player  uuid regex",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"response is as expected\", function () {",
+															"pm.response.to.have.status(400);",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"body": {
+													"mode": "urlencoded",
+													"urlencoded": []
+												},
+												"url": {
+													"raw": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-",
+													"protocol": "http",
+													"host": [
+														"localhost"
+													],
+													"port": "8080",
+													"path": [
+														"FootballTeam-1.0",
+														"resource",
+														"player",
+														"delete"
+													],
+													"query": [
+														{
+															"key": "uuid",
+															"value": "fe733f7a-d9bb-11ec-"
+														}
+													]
+												},
+												"description": "erstellt ein Book\n"
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }

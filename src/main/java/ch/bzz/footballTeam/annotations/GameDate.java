@@ -10,7 +10,7 @@ import javax.validation.Constraint;
 import javax.validation.Payload;
 
 /**
- * Validator for the Attributte Date in Model-Class Game
+ * Validator for the Attribute Date in Model-Class Game
  *
  * @author Vivek Viruthiyel
  * @version 1.0

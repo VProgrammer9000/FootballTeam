@@ -32,6 +32,6 @@ public class GameDateValidator implements ConstraintValidator<GameDate, String> 
 
         LocalDate date= Converter.stringToLocalDate(dateStr);
         LocalDate today = LocalDate.now();
-        return ChronoUnit.YEARS.between(date, today)<=100;
+        return ChronoUnit.YEARS.between(date, today)<=gameDate;
     }
 }
