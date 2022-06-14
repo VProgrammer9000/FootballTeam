@@ -1,5 +1,7 @@
 package ch.bzz.footballTeam.service;
 
+import ch.bzz.footballTeam.annotations.GameDate;
+
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 import java.io.FileInputStream;
@@ -30,6 +32,7 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet providers = new HashSet<Class<?>>();
+        providers.add(GameDate.class);
         providers.add(TestService.class);
         providers.add(GameService.class);
         providers.add(PlayerService.class);

@@ -1,15 +1,17 @@
 package ch.bzz.footballTeam.service;
 
+import ch.bzz.footballTeam.annotations.GameDate;
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Game;
+import ch.bzz.footballTeam.util.Converter;
 
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -83,11 +85,13 @@ public class GameService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertGame(
             @Valid @BeanParam Game game,
-            @Pattern(regexp="\\d{4}-(0[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])")
+            @GameDate()
+            @Size(min=10,max=10)
+            @Pattern(regexp="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])")
             @FormParam("date") String date
     ) {
         game.setUuid(UUID.randomUUID().toString());
-        game.setDate(convertStringToLocalDate(date));
+        game.setDate(Converter.stringToLocalDate(date));
         DataHandler.insertGame(game);
 
         return Response.status(200).entity("").build();
@@ -102,19 +106,22 @@ public class GameService {
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateGame(
             @Valid @BeanParam Game game,
-            @Pattern(regexp="\\d{4}-(0[1-9]|1[012])-(0?[1-9]|[12][0-9]|3[01])")
+            @Pattern(regexp="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])")
+            @Size(min=10,max=10)
+            @GameDate()
             @FormParam("date") String date
             ) {
         Game oldGame = DataHandler.readGameByUUID(game.getUuid());
         if (oldGame == null) {
             return Response.status(410).entity("").build();
         }
-            oldGame.setTeam1(game.getTeam1());
-            oldGame.setTeam2(game.getTeam2());
-            oldGame.setGameResult(game.getGameResult());
-            oldGame.setDate(convertStringToLocalDate(date));
 
-            DataHandler.updateGame();
+        oldGame.setTeam1(game.getTeam1());
+        oldGame.setTeam2(game.getTeam2());
+        oldGame.setGameResult(game.getGameResult());
+        oldGame.setDate(Converter.stringToLocalDate(date));
+
+        DataHandler.updateGame();
 
         return Response.status(200).entity("").build();
     }
@@ -141,15 +148,5 @@ public class GameService {
         return Response.status(httpStatus).entity("").build();
     }
 
-    /**
-     * Converts a Sting to a LocalDate
-     * @param date to convert
-     * @return date as LocalDate
-     */
-    private LocalDate  convertStringToLocalDate(String date){
-        int year=Integer.parseInt(date.substring(0,4));
-        int month=Integer.parseInt(date.substring(5,7));
-        int day=Integer.parseInt(date.substring(8,9));
-        return LocalDate.of(year,month,day);
-    }
+
 }
