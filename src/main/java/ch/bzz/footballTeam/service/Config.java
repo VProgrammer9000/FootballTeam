@@ -1,6 +1,6 @@
 package ch.bzz.footballTeam.service;
 
-import ch.bzz.footballTeam.annotations.GameDate;
+import ch.bzz.footballTeam.exception.MyExceptionMapper;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
@@ -15,11 +15,10 @@ import java.util.Set;
  * The Configuration of the Server.
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 24.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 @ApplicationPath("/resource")
-
 public class Config extends Application {
     private static final String PROPERTIES_PATH = "/home/bzz/webapp/footballTeam.properties";
     private static Properties properties = null;
@@ -32,11 +31,15 @@ public class Config extends Application {
     @Override
     public Set<Class<?>> getClasses() {
         HashSet providers = new HashSet<Class<?>>();
-        providers.add(GameDate.class);
+
         providers.add(TestService.class);
+
         providers.add(GameService.class);
         providers.add(PlayerService.class);
         providers.add(TeamService.class);
+
+        providers.add(MyExceptionMapper.class);
+
         return providers;
     }
 

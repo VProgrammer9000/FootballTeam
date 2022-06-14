@@ -4,6 +4,10 @@ import java.time.LocalDate;
 
 /**
  * Converter for Programm FootballTeam
+ *
+ * @author Vivek Viruthiyel
+ * @version 2.0
+ * @since 14.06.2022
  */
 public class Converter {
     /**

@@ -1,17 +1,21 @@
 package ch.bzz.footballTeam.annotations;
 
-import static java.lang.annotation.ElementType.ANNOTATION_TYPE;
-import static java.lang.annotation.ElementType.CONSTRUCTOR;
-import static java.lang.annotation.ElementType.FIELD;
-import static java.lang.annotation.ElementType.METHOD;
+
 import static java.lang.annotation.ElementType.PARAMETER;
-import static java.lang.annotation.ElementType.TYPE_USE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import java.lang.annotation.*;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;
+
+/**
+ * Validator for the Attributte Date in Model-Class Game
+ *
+ * @author Vivek Viruthiyel
+ * @version 1.0
+ * @since 14.06.2022
+ */
 
 @Retention(RUNTIME)
 @Constraint(validatedBy = {GameDateValidator.class})

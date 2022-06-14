@@ -21,8 +21,8 @@ import java.util.List;
  * Get and Converts the Data from the JSON-Files
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 24.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 public class DataHandler {
     private static List<Game> gameList;

@@ -16,8 +16,8 @@ import java.nio.file.Paths;
  * Testing if Server is running correctly and trying out Services.
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 12.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 @Path("test")
 public class TestService {

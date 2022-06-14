@@ -8,7 +8,6 @@ import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
 import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateSerializer;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.PastOrPresent;
 import javax.validation.constraints.Pattern;
 import javax.ws.rs.FormParam;
 import java.time.LocalDate;
@@ -17,8 +16,8 @@ import java.time.LocalDate;
  * The Model-Class Game is storing data for the Server.
  *
  * @author Vivek Viruthiyel
- * @version 1.0
- * @since 24.05.2022
+ * @version 2.0
+ * @since 14.06.2022
  */
 public class Game {
 
