@@ -14,18 +14,30 @@
   <span><a href="playerList.html">Players</a></span>
   <span><a href="teamList.html">Teams</a></span>
   <span><a href="gameList.html">Games</a></span>
-  <span id="logOnOff"><a href="./index.html">Logout</a></a></span>
+  <span id="logOnOff"><a href="./index.html">Logout</a></span>
   <span id="message" style="color: red;"></span>
 </nav>
-<h3> Edit Team</h3>
+<h3>Edit Team</h3>
 <form id="teamEditForm" name="teamEdit">
   <table>
     <tr>
-      <td><label for="teamName">Verlag</label></td>
+      <td><label for="teamName">Team</label></td>
       <td>
         <input id="teamName" name="teamName" type="text" size="30" minlength="4" maxlength="50" required/>
         <input id="teamUUID" name="teamUUID" type="hidden"/>
       </td>
+    </tr>
+
+    <tr>
+      <td><label for="teamAmountWins">Amount of wins</label></td>
+    <!--TODO Validation -->
+      <td><input id="teamAmountWins" name="teamAmountWins" type="text" size="30" minlength="5" maxlength="50" required/></td>
+    </tr>
+
+    <tr>
+      <td><label for="teamAmountLost">Amount of Loses</label></td>
+      <!--TODO Validation -->
+      <td><input id="teamAmountLost" name="teamAmountLost" type="text" size="30" minlength="5" maxlength="50" required/></td>
     </tr>
 
   </table>

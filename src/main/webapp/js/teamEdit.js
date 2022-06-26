@@ -1,8 +1,9 @@
 /**
- * view-controller for playerEdit.html
+ * view-controller for teamEdit.html
  * @author Marcel Suter
  */
 document.addEventListener("DOMContentLoaded", () => {
+    /*readPublishers();*/
     readTeam();
 
     document.getElementById("teamEditForm").addEventListener("submit", saveTeam);
@@ -14,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
  */
 function saveTeam(event) {
     event.preventDefault();
-    showMessage("", "info");
 
     const teamForm = document.getElementById("teamEditForm");
     const formData = new FormData(teamForm);
@@ -35,19 +35,16 @@ function saveTeam(event) {
         {
             method: method,
             headers: {
-                "Content-Type": "application/x-www-form-urlencoded",
-                "Authorization": "Bearer " + readStorage("token")
+                "Content-Type": "application/x-www-form-urlencoded"
             },
             body: data
         })
         .then(function (response) {
             if (!response.ok) {
-                showMessage("Fehler beim Speichern", "error");
                 console.log(response);
-            } else {
-                showMessage("Buch gespeichert", "info");
-            return response;}
+            } else return response;
         })
+        .then()
         .catch(function (error) {
             console.log(error);
         });
@@ -58,9 +55,7 @@ function saveTeam(event) {
  */
 function readTeam() {
     const teamUUID = getQueryParam("uuid");
-    fetch("./resource/team/read?uuid=" + teamUUID, {
-        headers: { "Authorization": "Bearer " + readStorage("token")}
-    })
+    fetch("./resource/team/read?uuid=" + teamUUID)
         .then(function (response) {
             if (response.ok) {
                 return response;
@@ -82,18 +77,54 @@ function readTeam() {
  * @param data  the team-data
  */
 function showTeam(data) {
-    const userRole = getCookie("userRole");
     document.getElementById("teamUUID").value = data.teamUUID;
     document.getElementById("teamName").value = data.teamName;
-
-    const locked =  !(userRole === "user" || userRole === "admin");
-    lockForm("teamEditForm", locked);
+    document.getElementById("teamAmountWins").value = data.teamAmountWins;
+    document.getElementById("teamAmountLost").value = data.teamAmountLost;
 }
 
 /**
- * redirects to the teamlist
+ * reads all publishers as an array
+ */
+/*
+function readPublishers() {
+
+    fetch("./resource/publisher/list")
+        .then(function (response) {
+            if (response.ok) {
+                return response;
+            } else {
+                console.log(response);
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            showPublishers(data);
+        })
+        .catch(function (error) {
+            console.log(error);
+        });
+}
+*/
+/**
+ * shows all publishers as a dropdown
+ * @param data
+ */
+/*
+function showPublishers(data) {
+    let dropdown = document.getElementById("publisher");
+    data.forEach(publisher => {
+        let option = document.createElement("option");
+        option.text = publisher.publisher;
+        option.value = publisher.publisherUUID;
+        dropdown.add(option);
+    })
+}
+*/
+/**
+ * redirects to the teamList
  * @param event  the click-event
  */
 function cancelEdit(event) {
-    window.location.href = "../teamList.html";
+    window.location.href = "./teamList.html";
 }

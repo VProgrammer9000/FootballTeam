@@ -12,13 +12,12 @@
  * @param key  the key to be searched
  * @returns values as a String or null
  */
-/*
 function getQueryParam (key) {
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
     return urlParams.get(key);
-}*/
+}
 
 /**
  * shows an information or error message

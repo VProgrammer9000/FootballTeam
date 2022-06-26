@@ -1,20 +1,16 @@
 /**
  * view-controller for teamList.html
- * @author Marcel Suter
+ * @author Vivek Viruthiyel
  */
-let delayTimer;
-
 document.addEventListener("DOMContentLoaded", () => {
-    readTeams("","");
-
-    document.getElementById("search").addEventListener("keyup", searchTeams);
+    readTeams();
 });
 
+/**
+ * reads all teams
+ */
 function readTeams() {
-    let url = "./resource/team/list";
-    fetch(url, {
-        headers: { "Authorization": "Bearer " + readStorage("token")}
-    })
+    fetch("./resource/team/list")
         .then(function (response) {
             if (response.ok) {
                 return response;
@@ -24,55 +20,42 @@ function readTeams() {
         })
         .then(response => response.json())
         .then(data => {
-            showTeamList(data);
+            showTeamlist(data);
         })
         .catch(function (error) {
             console.log(error);
         });
 }
 
-
 /**
- * shows the teams as a table
+ * shows the teamlist as a table
  * @param data  the teams
  */
-function showTeamList(data) {
-    const userRole = getCookie("userRole");
+function showTeamlist(data) {
     let tBody = document.getElementById("teamList");
-    tBody.innerHTML = "";
     data.forEach(team => {
         let row = tBody.insertRow(-1);
+        row.insertCell(-1).innerHTML = team.teamName;
+        row.insertCell(-1).innerHTML = team.teamAmountWins;
+        row.insertCell(-1).innerHTML = team.teamAmountLost;
 
         let button = document.createElement("button");
-        if (userRole === "user" || userRole === "admin")
-            button.innerHTML = "&#9998;";
-        else
-            button.innerHTML = "&#128065;";
-
+        button.innerHTML = "Bearbeiten ...";
         button.type = "button";
-        button.name = "editBook";
+        button.name = "editTeam";
         button.setAttribute("data-teamuuid", team.teamUUID);
         button.addEventListener("click", editTeam);
         row.insertCell(-1).appendChild(button);
 
-        row.insertCell(-1).innerHTML = team.teamName;
-
-
-        if (userRole === "admin") {
-            button = document.createElement("button");
-            button.innerHTML = "&#128465;";
-            button.type = "button";
-            button.name = "deleteBook";
-            button.setAttribute("data-teamuuid", team.teamUUID);
-            button.addEventListener("click", deleteTeam);
-            row.insertCell(-1).appendChild(button);
-        }
+        button = document.createElement("button");
+        button.innerHTML = "Löschen ...";
+        button.type = "button";
+        button.name = "deleteTeam";
+        button.setAttribute("data-teamuuid", team.teamUUID);
+        button.addEventListener("click", deleteTeam);
+        row.insertCell(-1).appendChild(button);
 
     });
-
-    if (userRole === "user" || userRole === "admin") {
-        document.getElementById("addButton").innerHTML = "<a href='./teamEdit.html'>Neues Buch</a>";
-    }
 }
 
 /**
@@ -82,7 +65,7 @@ function showTeamList(data) {
 function editTeam(event) {
     const button = event.target;
     const teamUUID = button.getAttribute("data-teamuuid");
-    window.location.href = "./teamEdit.html?uuid=" + teamUUID;
+    window.location.href = "./teamedit.html?uuid=" + teamUUID;
 }
 
 /**
@@ -95,12 +78,11 @@ function deleteTeam(event) {
 
     fetch("./resource/team/delete?uuid=" + teamUUID,
         {
-            method: "DELETE",
-            headers: { "Authorization": "Bearer " + readStorage("token")}
+            method: "DELETE"
         })
         .then(function (response) {
             if (response.ok) {
-                window.location.href = "../teamList.html";
+                window.location.href = "./teamList.html";
             } else {
                 console.log(response);
             }
