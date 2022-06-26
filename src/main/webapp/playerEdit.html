@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="author" content="Vivek Viruthiyel"/>
+  <meta name="project" content="FootballTeam"/>
+  <title>Edit Player</title>
+  <link rel="stylesheet" href="css/footballTeam.css">
+  <script src="./js/util.js"></script>
+  <script src="js/playerEdit.js"></script>
+</head>
+<body>
+<nav id="nav">
+  <span><a href="playerList.html">Bücher</a></span>
+  <span><a href="teamList.html">Verlage</a></span>
+  <span><a href="gameList.html">Autoren</a></span>
+  <span id="logOnOff"><a href="./index.html">Abmelden</a></a></span>
+  <span id="message" style="color: red;"></span>
+</nav>
+<h3>Buch bearbeiten</h3>
+<form id="bookeditForm" name="bookedit">
+  <table>
+    <tr>
+      <td><label for="title">Buchtitel</label></td>
+      <td>
+        <input id="title" name="title" type="text" size="30" minlength="2" maxlength="30" required/>
+        <input id="bookUUID" name="bookUUID" type="hidden"/>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="author">Autor</label></td>
+      <td><select id="author" name="author" multiple required></select></td>
+    </tr>
+    <tr>
+      <td><label for="publisher">Verlag</label></td>
+      <td>
+        <select id="publisher" name="publisherUUID" required>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td><label for="price">Preis</label></td>
+      <td><input id="price" name="price" type="number" min="0.05" max="199.95" step="0.05"/></td>
+    </tr>
+    <tr>
+      <td><label for="isbn">ISBN</label></td>
+      <td>
+        <input id="isbn" name="isbn" type="pattern"
+               pattern="(?=[0-9]{13}|[- 0-9]{17})97[89](-[0-9]{1,5}){3}-[0-9]"/>
+      </td>
+    </tr>
+  </table>
+  <table>
+    <tr>
+      <td>
+        <button id="save" type="submit">Speichern</button>
+      </td>
+      <td>
+        <button id="reset" type="reset">Zurücksetzen</button>
+      </td>
+      <td>
+        <button id="cancel" type="button">Abbruch</button>
+      </td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
