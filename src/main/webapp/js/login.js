@@ -27,8 +27,7 @@ function loginUser(event) {
 
 /**
  * save the JWToken and redirect
- * @param response
  */
 function loginSuccess() {
-    window.location.href = "./gameList.html";
+    window.location.href = "./teamList.html";
 }
