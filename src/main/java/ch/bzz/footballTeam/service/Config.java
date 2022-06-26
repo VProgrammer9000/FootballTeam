@@ -37,6 +37,7 @@ public class Config extends Application {
         providers.add(GameService.class);
         providers.add(PlayerService.class);
         providers.add(TeamService.class);
+        providers.add(UserService.class);
 
         providers.add(MyExceptionMapper.class);
 
