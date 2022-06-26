@@ -2,6 +2,8 @@ package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
 
+import javax.annotation.security.RolesAllowed;
+import javax.ws.rs.CookieParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -29,7 +31,12 @@ public class TestService {
     @GET
     @Path("test")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response test() {
+    public Response test(
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
 
         return Response
                 .status(200)
@@ -44,7 +51,13 @@ public class TestService {
     @GET
     @Path("restore")
     @Produces(MediaType.TEXT_PLAIN)
-    public Response restore() {
+    public Response restore(
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         try {
             java.nio.file.Path path = Paths.get(Config.getProperty("gameJSON"));
             String filename = path.getFileName().toString();

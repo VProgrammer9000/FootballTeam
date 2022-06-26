@@ -3,6 +3,7 @@ package ch.bzz.footballTeam.service;
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Player;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -31,7 +32,14 @@ public class PlayerService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response playerList(@QueryParam("sort") String sort) {
+    public Response playerList(
+            @QueryParam("sort") String sort,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         List<Player> playerList= DataHandler.readAllPlayers();
 
         //sort
@@ -62,7 +70,14 @@ public class PlayerService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response playerRead(@QueryParam("uuid") String playerUUID) {
+    public Response playerRead(
+            @QueryParam("uuid") String playerUUID,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         Player player=DataHandler.readPlayerByUUID(playerUUID);
 
         if(player==null) {
@@ -78,13 +93,19 @@ public class PlayerService {
      * inserts a new player
      * @return Response
      */
+    @RolesAllowed({"admin"})
     @POST
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertPlayer(
             @Valid @BeanParam Player player,
-            @FormParam("playerUUID") String playerUUID
+            @FormParam("playerUUID") String playerUUID,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         player.setUuid(UUID.randomUUID().toString());
 
         DataHandler.insertPlayer(player);
@@ -98,12 +119,18 @@ public class PlayerService {
      * updates a new player
      * @return Response
      */
+    @RolesAllowed({"admin"})
     @PUT
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updatePlayer(
-            @Valid @BeanParam Player player
+            @Valid @BeanParam Player player,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         Player oldPlayer = DataHandler.readPlayerByUUID(player.getUuid());
 
         if (oldPlayer == null){
@@ -123,14 +150,20 @@ public class PlayerService {
      * @param playerUUID  the key
      * @return  Response
      */
+    @RolesAllowed({"admin"})
     @DELETE
     @Path("delete")
     @Produces(MediaType.TEXT_PLAIN)
     public Response deleteBook(
             @NotNull
             @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @QueryParam("uuid") String playerUUID
+            @QueryParam("uuid") String playerUUID,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         int httpStatus = 200;
         if (!DataHandler.deletePlayer(playerUUID)) {
             httpStatus = 410;

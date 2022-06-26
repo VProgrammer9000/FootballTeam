@@ -5,12 +5,14 @@ import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Game;
 import ch.bzz.footballTeam.util.Converter;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -37,7 +39,14 @@ public class GameService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response gameList(@QueryParam("sort") String sort) {
+    public Response gameList(
+            @QueryParam("sort") String sort,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         List<Game> gameList= DataHandler.readAllGames();
 
         //sort
@@ -64,7 +73,14 @@ public class GameService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response gameRead(@QueryParam("uuid") String gameUUID) {
+    public Response gameRead(
+            @QueryParam("uuid") String gameUUID,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         Game game=DataHandler.readGameByUUID(gameUUID);
 
         if(game==null) {
@@ -88,8 +104,13 @@ public class GameService {
             @GameDate()
             @Size(min=10,max=10)
             @Pattern(regexp="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])")
-            @FormParam("date") String date
+            @FormParam("date") String date,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         game.setUuid(UUID.randomUUID().toString());
         game.setDate(Converter.stringToLocalDate(date));
         DataHandler.insertGame(game);
@@ -109,8 +130,13 @@ public class GameService {
             @Pattern(regexp="[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])")
             @Size(min=10,max=10)
             @GameDate()
-            @FormParam("date") String date
+            @FormParam("date") String date,
+            @CookieParam("userRole") String userRole
             ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         Game oldGame = DataHandler.readGameByUUID(game.getUuid());
         if (oldGame == null) {
             return Response.status(410).entity("").build();
@@ -137,8 +163,13 @@ public class GameService {
     public Response deleteGame(
             @NotNull
             @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @QueryParam("uuid") String gameUUID
+            @QueryParam("uuid") String gameUUID,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         int httpStatus = 200;
 
         if (!DataHandler.deleteGame(gameUUID)) {

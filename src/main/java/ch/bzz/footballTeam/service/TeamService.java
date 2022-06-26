@@ -3,6 +3,7 @@ package ch.bzz.footballTeam.service;
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Team;
 
+import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
@@ -32,7 +33,14 @@ public class TeamService {
     @GET
     @Path("list")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response teamList(@QueryParam("sort") String sort) {
+    public Response teamList(
+            @QueryParam("sort") String sort,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         List<Team> teamList= DataHandler.readAllTeams();
 
         //sort
@@ -63,7 +71,14 @@ public class TeamService {
     @GET
     @Path("read")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response teamRead(@QueryParam("uuid") String teamUUID) {
+    public Response teamRead(
+            @QueryParam("uuid") String teamUUID,
+            @CookieParam("userRole") String userRole
+    ) {
+        if (userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         Team team=DataHandler.readTeamByUUID(teamUUID);
 
         if(team==null) {
@@ -83,8 +98,13 @@ public class TeamService {
     @Path("create")
     @Produces(MediaType.TEXT_PLAIN)
     public Response insertTeam(
-            @Valid @BeanParam Team team
+            @Valid @BeanParam Team team,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         team.setUuid(UUID.randomUUID().toString());
 
         DataHandler.insertTeam(team);
@@ -104,8 +124,12 @@ public class TeamService {
     @Path("update")
     @Produces(MediaType.TEXT_PLAIN)
     public Response updateTeam(
-            @Valid @BeanParam Team team
+            @Valid @BeanParam Team team,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
 
         Team oldTeam = DataHandler.readTeamByUUID(team.getUuid());
 
@@ -133,8 +157,13 @@ public class TeamService {
     public Response deleteTeam(
             @NotNull
             @Pattern(regexp="[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}")
-            @QueryParam("uuid") String teamUUID
+            @QueryParam("uuid") String teamUUID,
+            @CookieParam("userRole") String userRole
     ) {
+        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+            return Response.status(403).build();
+        }
+
         int httpStatus = 200;
         if (!DataHandler.deleteTeam(teamUUID)) {
             httpStatus = 410;
