@@ -1,0 +1,2188 @@
+{
+	"id": "54fc6671-a7ce-44b7-b632-73a1ffe54604",
+	"name": "Milestone 3.",
+	"timestamp": "2022-06-28T21:08:06.569Z",
+	"collection_id": "0-f4501b13-9a1e-43e9-a2c5-3d8f33108aec",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 70,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "1ca1153a-1655-4307-a7ca-813f394953b1",
+			"name": "3.5.2 read list of games",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list",
+			"time": 26,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "e12fc90e-0169-45ae-8a62-a10dadebb427",
+			"name": "3.5.3 read list of teams",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list",
+			"time": 7,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "cee043ad-f029-4f2b-a0a4-92ca9bb6b688",
+			"name": "3.5.4 read list of players",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list",
+			"time": 5,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				5
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "dc6ac8d9-b3e8-4975-8c89-f37d5b31a738",
+			"name": "3.5.5 read a game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+			"time": 13,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "090642c8-bb5b-4925-8366-a066e4d120e8",
+			"name": "3.5.6 read a team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 20,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "ee614b3b-994e-4633-8d3a-07033ae5fe07",
+			"name": "3.5.7 read a player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=f8c4857a-d9bb-11ec-9d64-0242ac120002",
+			"time": 7,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f7ac8061-36d0-4a21-a949-7bee81e07270",
+			"name": "3.5.8 create Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f3bb3d6c-fbe2-492a-9d53-59a35439c1e2",
+			"name": "3.5.9 create Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+			"time": 35,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "4fda551f-48a0-4195-91c7-4bc473442228",
+			"name": "3.5.10 create Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+			"time": 11,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "98c88222-1310-4cee-926e-72e46839cd8b",
+			"name": "3.5.11 update Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "7b0c98a3-d131-4ff2-840c-3628aa3ce41e",
+			"name": "3.5.12 update Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "0e1e97ea-7b7a-46b0-ac98-9f1ee072ce26",
+			"name": "3.5.13 update Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+			"time": 15,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "ac0b1c37-4e0b-4f76-ba19-247b8778fb59",
+			"name": "3.5.14 delete Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-9d64-0242ac120002",
+			"time": 16,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "fc556fdb-8a67-4ac0-ba7b-246c2e423ba4",
+			"name": "3.5.15 delete Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "6b72bb52-7f09-4d15-80cf-de710bc3268f",
+			"name": "3.5.16 delete Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-9d64-0242ac120002",
+			"time": 11,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "415ef7bc-663b-48c3-ae94-ebf8f28c9ce7",
+			"name": "3.1.1 login",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/login",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "8134e8cf-6921-4d1e-909a-456bd824b238",
+			"name": "3.1.2 login not found",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/login",
+			"time": 21,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "639a96a2-dbf7-4349-84f8-a6a123cca9af",
+			"name": "3.1.3 logout",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/logout",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "cdf87423-07da-4e0a-bdac-047b83843702",
+			"name": "3.2.1 login guest",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/login",
+			"time": 28,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "b557b0a4-8baa-414b-ba8a-c901f2deb246",
+			"name": "3.2.2 read list of games",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list",
+			"time": 11,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "d2747aec-648b-4cff-839a-6a2b3b85f078",
+			"name": "3.2.3 read list of teams",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "126f79a5-45f1-4169-acf1-1272fb946b19",
+			"name": "3.2.4 read list of players",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list",
+			"time": 35,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "8ecba647-54e4-4595-83a5-b1810f7e50c8",
+			"name": "3.2.5 read a game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+			"time": 13,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "7d8933d0-5a13-4600-b2e1-ef25f2100693",
+			"name": "3.2.6 read a team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 31,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				31
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "370bdad1-5279-4b82-b868-c1d14b4ceed1",
+			"name": "3.2.7 read a player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=f8c4857a-d9bb-11ec-9d64-0242ac120002",
+			"time": 11,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "195accb0-557b-4f9a-b9f4-d401f62436e8",
+			"name": "3.2.8 create Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+			"time": 24,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f90b060f-bbdb-49c2-a1d7-967a9ff2f344",
+			"name": "3.2.9 create Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+			"time": 12,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "f1fe8bcf-a41a-4ffe-a00e-d7d7e629ae3e",
+			"name": "3.2.10 create Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "c16c8d7d-c6b2-4ef1-a1b7-0598833a398b",
+			"name": "3.2.11 update Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+			"time": 17,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "dada9426-4619-4476-b66f-68ba082f3b73",
+			"name": "3.2.12 update Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+			"time": 9,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "0f966cdb-b746-49a5-bc54-1ed7f67d7d91",
+			"name": "3.2.13 update Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+			"time": 11,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				11
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "546a8499-d895-4de7-8180-ba421c8af35f",
+			"name": "3.2.14 delete Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-9d64-0242ac120002",
+			"time": 26,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				26
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "54c367c8-fe23-4183-b052-22ee759904bb",
+			"name": "3.2.15 delete Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 36,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				36
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "0be3dca4-ce40-4aa1-ad37-d65ea48fc1a7",
+			"name": "3.2.16 delete Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "878d46f5-316e-4d47-887e-bcfef8aaa08b",
+			"name": "3.2.17 logout",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/logout",
+			"time": 25,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				25
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "960a9d13-9c1a-4eca-b65e-fa5d20c6fb30",
+			"name": "3.3.1 login",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/login",
+			"time": 35,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				35
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "9cfd928c-cbaa-4cd0-bb77-62b54c904c30",
+			"name": "3.3.2 read list of games",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list",
+			"time": 28,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				28
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "9c90022f-cdb8-4e3e-8ed1-d71425a0e7ab",
+			"name": "3.3.3 read list of teams",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list",
+			"time": 53,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				53
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "27f7251a-c8e2-47de-ad16-47ef021bb25f",
+			"name": "3.3.4 read list of players",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list",
+			"time": 33,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				33
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "616e0ea5-28b5-4106-9492-ec3cb4d5aa06",
+			"name": "3.3.5 read a game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+			"time": 13,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				13
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "c76135e5-966b-4552-a99e-d50263f780d9",
+			"name": "3.3.6 read a team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 21,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "541c4946-55ca-44d6-9366-7566ddaa33d7",
+			"name": "3.3.7 read a player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=f8c4857a-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "4c7ee540-cd69-4110-8c61-21f7763a9043",
+			"name": "3.3.8 create Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+			"time": 10,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "8b8a46af-b650-4161-a5fd-f55ac2a3cce9",
+			"name": "3.3.9 create Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+			"time": 12,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				12
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "a5d06652-1e34-4d2f-8ec3-0723d3607fe1",
+			"name": "3.3.10 create Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "1a772b0b-a439-4181-b353-c38a8ded18eb",
+			"name": "3.3.11 update Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+			"time": 18,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "5618f4f7-b824-4e42-a62d-85371c0cad95",
+			"name": "3.3.12 update Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+			"time": 17,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "a0c2c3bf-8a23-4543-9899-1db2d2955cb4",
+			"name": "3.3.13 update Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+			"time": 17,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				17
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "aaabe921-0c1e-4654-bfad-65e072d87fee",
+			"name": "3.3.14 delete Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-9d64-0242ac120002",
+			"time": 21,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				21
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "a95c12d9-acba-45c8-81a9-2052a6d09a2e",
+			"name": "3.3.15 delete Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "3c4167ca-cd7f-4cad-bbc9-e66dc1cc569d",
+			"name": "3.3.16 delete Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-9d64-0242ac120002",
+			"time": 8,
+			"responseCode": {
+				"code": 403,
+				"name": "Forbidden"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "d6d77ac2-f27a-4c87-bb40-6a6c0f494173",
+			"name": "3.3.17 logout",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/logout",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "e824596f-5bd0-4d59-845f-fcb6698e8be5",
+			"name": "3.4.1 login",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/login",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				15
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "59edac60-46f2-474a-8082-fbfb4f7a7369",
+			"name": "3.4.2 read list of games",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/list",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "e0650439-24a0-4835-b725-00bcc9429bda",
+			"name": "3.4.3 read list of teams",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/list",
+			"time": 8,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				8
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "dceb8427-a9ab-4449-9275-dac615afd03f",
+			"name": "3.4.4 read list of players",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/list",
+			"time": 19,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				19
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "a38a5707-e447-444b-977f-99a753066615",
+			"name": "3.4.5 read a game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/read?uuid=d1afb8d8-d9bb-11ec-9d64-0242ac120002",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "630aca8c-7513-46e9-8980-eee97baeb7b2",
+			"name": "3.4.6 read a team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/read?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "1940d93e-c8bc-4eab-adbc-280c3cc2ad23",
+			"name": "3.4.7 read a player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/read?uuid=f8c4857a-d9bb-11ec-9d64-0242ac120002",
+			"time": 24,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				24
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "2f9d3a5c-5292-4dcc-8ca0-ac3308a35978",
+			"name": "3.4.8 create Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/create",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "2be59c80-a4bd-4fd7-8a57-17eedb012d82",
+			"name": "3.4.9 create Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/create",
+			"time": 20,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				20
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "573b8e3b-fd48-4fb3-b33d-ae39b461d369",
+			"name": "3.4.10 create Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/create",
+			"time": 14,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				14
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "5af2b44f-78d3-4f45-a78e-ef9ac8cd033a",
+			"name": "3.4.11 update Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/update",
+			"time": 38,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				38
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "4a472cb0-5dd1-412a-8f93-7f33d63d5324",
+			"name": "3.4.12 update Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/update",
+			"time": 16,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				16
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "9c75cc8b-07b9-4d92-90c2-570dbfda24a5",
+			"name": "3.4.13 update Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/update",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				7
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "8a5d59da-c9d1-439f-b5bc-f55a5fa6770c",
+			"name": "3.4.14 delete Game",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/game/delete?uuid=dac43c46-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "bf98eb89-b93d-4678-b96c-91a6dee0bb89",
+			"name": "3.4.15 delete Team",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/team/delete?uuid=907271a8-d9bb-11ec-9d64-0242ac120002",
+			"time": 10,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				10
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "7a2e7705-370e-48fb-a6a9-71407a4d8682",
+			"name": "3.4.16 delete Player",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/player/delete?uuid=fe733f7a-d9bb-11ec-9d64-0242ac120002",
+			"time": 9,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				9
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "ea4dd10d-6137-4b25-9b90-6ed9fca8ba24",
+			"name": "3.4.17 logout",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/user/logout",
+			"time": 6,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				6
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		},
+		{
+			"id": "c0cc8b3f-edbd-4583-825a-3cbccc35bceb",
+			"name": "Restore",
+			"url": "http://localhost:8080/FootballTeam-1.0/resource/test/restore",
+			"time": 18,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"response is as expected": true
+			},
+			"testPassFailCounts": {
+				"response is as expected": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				18
+			],
+			"allTests": [
+				{
+					"response is as expected": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 1156,
+	"collection": {
+		"requests": [
+			{
+				"id": "1ca1153a-1655-4307-a7ca-813f394953b1",
+				"method": "GET"
+			},
+			{
+				"id": "e12fc90e-0169-45ae-8a62-a10dadebb427",
+				"method": "GET"
+			},
+			{
+				"id": "cee043ad-f029-4f2b-a0a4-92ca9bb6b688",
+				"method": "GET"
+			},
+			{
+				"id": "dc6ac8d9-b3e8-4975-8c89-f37d5b31a738",
+				"method": "GET"
+			},
+			{
+				"id": "090642c8-bb5b-4925-8366-a066e4d120e8",
+				"method": "GET"
+			},
+			{
+				"id": "ee614b3b-994e-4633-8d3a-07033ae5fe07",
+				"method": "GET"
+			},
+			{
+				"id": "f7ac8061-36d0-4a21-a949-7bee81e07270",
+				"method": "POST"
+			},
+			{
+				"id": "f3bb3d6c-fbe2-492a-9d53-59a35439c1e2",
+				"method": "POST"
+			},
+			{
+				"id": "4fda551f-48a0-4195-91c7-4bc473442228",
+				"method": "POST"
+			},
+			{
+				"id": "98c88222-1310-4cee-926e-72e46839cd8b",
+				"method": "PUT"
+			},
+			{
+				"id": "7b0c98a3-d131-4ff2-840c-3628aa3ce41e",
+				"method": "PUT"
+			},
+			{
+				"id": "0e1e97ea-7b7a-46b0-ac98-9f1ee072ce26",
+				"method": "PUT"
+			},
+			{
+				"id": "ac0b1c37-4e0b-4f76-ba19-247b8778fb59",
+				"method": "DELETE"
+			},
+			{
+				"id": "fc556fdb-8a67-4ac0-ba7b-246c2e423ba4",
+				"method": "DELETE"
+			},
+			{
+				"id": "6b72bb52-7f09-4d15-80cf-de710bc3268f",
+				"method": "DELETE"
+			},
+			{
+				"id": "415ef7bc-663b-48c3-ae94-ebf8f28c9ce7",
+				"method": "POST"
+			},
+			{
+				"id": "8134e8cf-6921-4d1e-909a-456bd824b238",
+				"method": "POST"
+			},
+			{
+				"id": "639a96a2-dbf7-4349-84f8-a6a123cca9af",
+				"method": "DELETE"
+			},
+			{
+				"id": "cdf87423-07da-4e0a-bdac-047b83843702",
+				"method": "POST"
+			},
+			{
+				"id": "b557b0a4-8baa-414b-ba8a-c901f2deb246",
+				"method": "GET"
+			},
+			{
+				"id": "d2747aec-648b-4cff-839a-6a2b3b85f078",
+				"method": "GET"
+			},
+			{
+				"id": "126f79a5-45f1-4169-acf1-1272fb946b19",
+				"method": "GET"
+			},
+			{
+				"id": "8ecba647-54e4-4595-83a5-b1810f7e50c8",
+				"method": "GET"
+			},
+			{
+				"id": "7d8933d0-5a13-4600-b2e1-ef25f2100693",
+				"method": "GET"
+			},
+			{
+				"id": "370bdad1-5279-4b82-b868-c1d14b4ceed1",
+				"method": "GET"
+			},
+			{
+				"id": "195accb0-557b-4f9a-b9f4-d401f62436e8",
+				"method": "POST"
+			},
+			{
+				"id": "f90b060f-bbdb-49c2-a1d7-967a9ff2f344",
+				"method": "POST"
+			},
+			{
+				"id": "f1fe8bcf-a41a-4ffe-a00e-d7d7e629ae3e",
+				"method": "POST"
+			},
+			{
+				"id": "c16c8d7d-c6b2-4ef1-a1b7-0598833a398b",
+				"method": "PUT"
+			},
+			{
+				"id": "dada9426-4619-4476-b66f-68ba082f3b73",
+				"method": "PUT"
+			},
+			{
+				"id": "0f966cdb-b746-49a5-bc54-1ed7f67d7d91",
+				"method": "PUT"
+			},
+			{
+				"id": "546a8499-d895-4de7-8180-ba421c8af35f",
+				"method": "DELETE"
+			},
+			{
+				"id": "54c367c8-fe23-4183-b052-22ee759904bb",
+				"method": "DELETE"
+			},
+			{
+				"id": "0be3dca4-ce40-4aa1-ad37-d65ea48fc1a7",
+				"method": "DELETE"
+			},
+			{
+				"id": "878d46f5-316e-4d47-887e-bcfef8aaa08b",
+				"method": "DELETE"
+			},
+			{
+				"id": "960a9d13-9c1a-4eca-b65e-fa5d20c6fb30",
+				"method": "POST"
+			},
+			{
+				"id": "9cfd928c-cbaa-4cd0-bb77-62b54c904c30",
+				"method": "GET"
+			},
+			{
+				"id": "9c90022f-cdb8-4e3e-8ed1-d71425a0e7ab",
+				"method": "GET"
+			},
+			{
+				"id": "27f7251a-c8e2-47de-ad16-47ef021bb25f",
+				"method": "GET"
+			},
+			{
+				"id": "616e0ea5-28b5-4106-9492-ec3cb4d5aa06",
+				"method": "GET"
+			},
+			{
+				"id": "c76135e5-966b-4552-a99e-d50263f780d9",
+				"method": "GET"
+			},
+			{
+				"id": "541c4946-55ca-44d6-9366-7566ddaa33d7",
+				"method": "GET"
+			},
+			{
+				"id": "4c7ee540-cd69-4110-8c61-21f7763a9043",
+				"method": "POST"
+			},
+			{
+				"id": "8b8a46af-b650-4161-a5fd-f55ac2a3cce9",
+				"method": "POST"
+			},
+			{
+				"id": "a5d06652-1e34-4d2f-8ec3-0723d3607fe1",
+				"method": "POST"
+			},
+			{
+				"id": "1a772b0b-a439-4181-b353-c38a8ded18eb",
+				"method": "PUT"
+			},
+			{
+				"id": "5618f4f7-b824-4e42-a62d-85371c0cad95",
+				"method": "PUT"
+			},
+			{
+				"id": "a0c2c3bf-8a23-4543-9899-1db2d2955cb4",
+				"method": "PUT"
+			},
+			{
+				"id": "aaabe921-0c1e-4654-bfad-65e072d87fee",
+				"method": "DELETE"
+			},
+			{
+				"id": "a95c12d9-acba-45c8-81a9-2052a6d09a2e",
+				"method": "DELETE"
+			},
+			{
+				"id": "3c4167ca-cd7f-4cad-bbc9-e66dc1cc569d",
+				"method": "DELETE"
+			},
+			{
+				"id": "d6d77ac2-f27a-4c87-bb40-6a6c0f494173",
+				"method": "DELETE"
+			},
+			{
+				"id": "e824596f-5bd0-4d59-845f-fcb6698e8be5",
+				"method": "POST"
+			},
+			{
+				"id": "59edac60-46f2-474a-8082-fbfb4f7a7369",
+				"method": "GET"
+			},
+			{
+				"id": "e0650439-24a0-4835-b725-00bcc9429bda",
+				"method": "GET"
+			},
+			{
+				"id": "dceb8427-a9ab-4449-9275-dac615afd03f",
+				"method": "GET"
+			},
+			{
+				"id": "a38a5707-e447-444b-977f-99a753066615",
+				"method": "GET"
+			},
+			{
+				"id": "630aca8c-7513-46e9-8980-eee97baeb7b2",
+				"method": "GET"
+			},
+			{
+				"id": "1940d93e-c8bc-4eab-adbc-280c3cc2ad23",
+				"method": "GET"
+			},
+			{
+				"id": "2f9d3a5c-5292-4dcc-8ca0-ac3308a35978",
+				"method": "POST"
+			},
+			{
+				"id": "2be59c80-a4bd-4fd7-8a57-17eedb012d82",
+				"method": "POST"
+			},
+			{
+				"id": "573b8e3b-fd48-4fb3-b33d-ae39b461d369",
+				"method": "POST"
+			},
+			{
+				"id": "5af2b44f-78d3-4f45-a78e-ef9ac8cd033a",
+				"method": "PUT"
+			},
+			{
+				"id": "4a472cb0-5dd1-412a-8f93-7f33d63d5324",
+				"method": "PUT"
+			},
+			{
+				"id": "9c75cc8b-07b9-4d92-90c2-570dbfda24a5",
+				"method": "PUT"
+			},
+			{
+				"id": "8a5d59da-c9d1-439f-b5bc-f55a5fa6770c",
+				"method": "DELETE"
+			},
+			{
+				"id": "bf98eb89-b93d-4678-b96c-91a6dee0bb89",
+				"method": "DELETE"
+			},
+			{
+				"id": "7a2e7705-370e-48fb-a6a9-71407a4d8682",
+				"method": "DELETE"
+			},
+			{
+				"id": "ea4dd10d-6137-4b25-9b90-6ed9fca8ba24",
+				"method": "DELETE"
+			},
+			{
+				"id": "c0cc8b3f-edbd-4583-825a-3cbccc35bceb",
+				"method": "GET"
+			}
+		]
+	}
+}

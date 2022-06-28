@@ -37,8 +37,10 @@ public class PlayerService {
             @QueryParam("sort") String sort,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")){
             return Response.status(403).build();
         }
 
@@ -76,8 +78,10 @@ public class PlayerService {
             @QueryParam("uuid") String playerUUID,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")){
             return Response.status(403).build();
         }
 
@@ -105,8 +109,10 @@ public class PlayerService {
             @FormParam("playerUUID") String playerUUID,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 
@@ -131,8 +137,10 @@ public class PlayerService {
             @Valid @BeanParam Player player,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 
@@ -165,8 +173,10 @@ public class PlayerService {
             @QueryParam("uuid") String playerUUID,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 

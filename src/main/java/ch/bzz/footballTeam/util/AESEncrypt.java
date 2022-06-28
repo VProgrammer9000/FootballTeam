@@ -21,6 +21,10 @@ public class AESEncrypt {
     private static SecretKeySpec secretKey;
     private static String secret = Config.getProperty("secret");
 
+    /**
+     * sets the Key
+     * @param myKey value of key
+     */
     private static void setKey(String myKey) {
         byte[] key;
         MessageDigest sha = null;
@@ -37,6 +41,11 @@ public class AESEncrypt {
         }
     }
 
+    /**
+     * encrypts a string value
+     * @param strToEncrypt value of string
+     * @return value of encrypted string
+     */
     public static String encrypt(String strToEncrypt) {
         try {
             setKey(secret);
@@ -49,6 +58,11 @@ public class AESEncrypt {
         return null;
     }
 
+    /**
+     * decrypts a string value
+     * @param strToDecrypt value of encrypted string
+     * @return value of decrypted string
+     */
     public static String decrypt(String strToDecrypt) {
         try {
             setKey(secret);

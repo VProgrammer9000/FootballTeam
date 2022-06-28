@@ -44,8 +44,10 @@ public class GameService {
             @QueryParam("sort") String sort,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")){
             return Response.status(403).build();
         }
 
@@ -79,8 +81,10 @@ public class GameService {
             @QueryParam("uuid") String gameUUID,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")){
             return Response.status(403).build();
         }
 
@@ -110,8 +114,10 @@ public class GameService {
             @FormParam("date") String date,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 
@@ -137,8 +143,10 @@ public class GameService {
             @FormParam("date") String date,
             @CookieParam("userRole") String userRole
             ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 
@@ -171,8 +179,10 @@ public class GameService {
             @QueryParam("uuid") String gameUUID,
             @CookieParam("userRole") String userRole
     ) {
-        userRole = AESEncrypt.decrypt(userRole);
-        if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
+        if (userRole!=null){
+            userRole = AESEncrypt.decrypt(userRole);
+        }
+        if (userRole==null||userRole.equals("guest")||userRole.equals("user")){
             return Response.status(403).build();
         }
 

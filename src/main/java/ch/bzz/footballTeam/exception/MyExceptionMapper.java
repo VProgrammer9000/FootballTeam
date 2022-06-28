@@ -15,7 +15,11 @@ import javax.ws.rs.ext.Provider;
  */
 @Provider
 public class MyExceptionMapper implements ExceptionMapper<ConstraintViolationException> {
-
+    /**
+     * Rsponse what the User made Wrong
+     * @param exception value of exception
+     * @return Message of Exception
+     */
   @Override
   public Response toResponse(final ConstraintViolationException exception) {
       return Response.status(Response.Status.BAD_REQUEST)
@@ -24,6 +28,11 @@ public class MyExceptionMapper implements ExceptionMapper<ConstraintViolationExc
                      .build();
   }
 
+    /**
+     * prepares the message for the Exception
+     * @param exception value of Exception
+     * @return message of Exception
+     */
   private String prepareMessage(ConstraintViolationException exception) {
       String msg = "";
       for (ConstraintViolation<?> cv : exception.getConstraintViolations()) {

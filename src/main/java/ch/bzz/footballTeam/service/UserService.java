@@ -5,7 +5,6 @@ import ch.bzz.footballTeam.data.UserData;
 import ch.bzz.footballTeam.model.User;
 import ch.bzz.footballTeam.util.AESEncrypt;
 
-import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.NewCookie;
@@ -16,6 +15,10 @@ import javax.ws.rs.core.Response;
  */
 @Path("user")
 public class UserService {
+    /**
+     * Logs in a User
+     * @return Response
+     */
     @POST
     @Path("login")
     @Produces(MediaType.TEXT_PLAIN)
@@ -45,6 +48,11 @@ public class UserService {
                 .cookie(cookie)
                 .build();
     }
+
+    /**
+     * Logs out the User saved in the Cookie
+     * @return Response
+     */
     @DELETE
     @Path("logout")
     @Produces(MediaType.TEXT_PLAIN)

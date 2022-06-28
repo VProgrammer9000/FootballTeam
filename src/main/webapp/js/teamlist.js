@@ -33,6 +33,7 @@ function readTeams() {
  */
 function showTeamlist(data) {
     let tBody = document.getElementById("list");
+
     data.forEach(team => {
         let row = tBody.insertRow(-1);
         row.insertCell(-1).innerHTML = team.name;
