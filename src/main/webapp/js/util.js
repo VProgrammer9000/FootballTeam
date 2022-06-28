@@ -36,7 +36,7 @@ function showMessage(text, type) {
  * @param cname  the name of the cookie
  * @returns {string}
  */
-/*
+
 function getCookie(cname) {
     let name = cname + "=";
     let decodedCookie = decodeURIComponent(document.cookie);
@@ -52,47 +52,3 @@ function getCookie(cname) {
     }
     return "";
 }
-*/
-
-/**
- * saves the JWToken in SessionStorage
- * @param headers  response headers
- *//*
-function saveToken(headers) {
-    const auth = headers.get("Authorization");
-    const token = auth.substring(7);
-    sessionStorage.setItem("token", token);
-}*/
-
-/**
- * reads the JWToken from SessionStorage
- * @returns {string}
- *//*
-function readStorage(item) {
-    let data = sessionStorage.getItem(item);
-    return data;
-}*/
-
-/**
- * locks/unlocks a form: input=readonly, select=disabled / submit, reset-buttons = hidden
- * @param formId  the id of the form
- * @param locked  should the fields be locked or unlocked
- */
-/*
-function lockForm(formId, locked=true) {
-    const form = document.getElementById(formId);
-    const inputs = form.getElementsByTagName("input");
-    for (let i=0; i<inputs.length; i++) {
-        inputs[i].readOnly = locked;
-    }
-
-    const selects = form.getElementsByTagName("select");
-    for (let i=0; i<selects.length; i++) {
-        selects[i].disabled = locked;
-    }
-
-    const buttons = form.querySelectorAll("button[type='submit'], button[type='reset']");
-    for (let i=0; i<buttons.length; i++) {
-        buttons[i].hidden = locked;
-    }
-}*/

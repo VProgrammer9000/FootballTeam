@@ -29,5 +29,5 @@ function loginUser(event) {
  * save the JWToken and redirect
  */
 function loginSuccess() {
-    window.location.href = "./teamList.html";
+    window.location.href = "./teamlist.html";
 }

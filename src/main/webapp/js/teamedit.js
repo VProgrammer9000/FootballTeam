@@ -1,12 +1,11 @@
 /**
- * view-controller for teamEdit.html
- * @author Marcel Suter
+ * view-controller for teamedit.html
+ * @author Vivek Viruthiyel
  */
 document.addEventListener("DOMContentLoaded", () => {
-    /*readPublishers();*/
     readTeam();
 
-    document.getElementById("teamEditForm").addEventListener("submit", saveTeam);
+    document.getElementById("teameditForm").addEventListener("submit", saveTeam);
     document.getElementById("cancel").addEventListener("click", cancelEdit);
 });
 
@@ -16,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function saveTeam(event) {
     event.preventDefault();
 
-    const teamForm = document.getElementById("teamEditForm");
+    const teamForm = document.getElementById("teameditForm");
     const formData = new FormData(teamForm);
     const data = new URLSearchParams(formData);
 
@@ -34,11 +33,10 @@ function saveTeam(event) {
     fetch(url,
         {
             method: method,
-            headers: {
-                "Content-Type": "application/x-www-form-urlencoded"
-            },
+            headers: {"Content-Type": "application/x-www-form-urlencoded"},
             body: data
         })
+
         .then(function (response) {
             if (!response.ok) {
                 console.log(response);
@@ -48,6 +46,7 @@ function saveTeam(event) {
         .catch(function (error) {
             console.log(error);
         });
+
 }
 
 /**
@@ -77,54 +76,19 @@ function readTeam() {
  * @param data  the team-data
  */
 function showTeam(data) {
-    document.getElementById("teamUUID").value = data.teamUUID;
-    document.getElementById("teamName").value = data.teamName;
-    document.getElementById("teamAmountWins").value = data.teamAmountWins;
-    document.getElementById("teamAmountLost").value = data.teamAmountLost;
+    document.getElementById("uuid").value = data.name;
+    document.getElementById("amountWins").value = data.amountWins;
+    document.getElementById("amountLost").value = data.amountLost;
 }
 
-/**
- * reads all publishers as an array
- */
-/*
-function readPublishers() {
 
-    fetch("./resource/publisher/list")
-        .then(function (response) {
-            if (response.ok) {
-                return response;
-            } else {
-                console.log(response);
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            showPublishers(data);
-        })
-        .catch(function (error) {
-            console.log(error);
-        });
-}
-*/
+
+
+
 /**
- * shows all publishers as a dropdown
- * @param data
- */
-/*
-function showPublishers(data) {
-    let dropdown = document.getElementById("publisher");
-    data.forEach(publisher => {
-        let option = document.createElement("option");
-        option.text = publisher.publisher;
-        option.value = publisher.publisherUUID;
-        dropdown.add(option);
-    })
-}
-*/
-/**
- * redirects to the teamList
+ * redirects to the team
  * @param event  the click-event
  */
 function cancelEdit(event) {
-    window.location.href = "./teamList.html";
+    window.location.href = "./teamlist.html";
 }

@@ -1,5 +1,5 @@
 /**
- * view-controller for teamList.html
+ * view-controller for teamlist.html
  * @author Vivek Viruthiyel
  */
 document.addEventListener("DOMContentLoaded", () => {
@@ -32,18 +32,19 @@ function readTeams() {
  * @param data  the teams
  */
 function showTeamlist(data) {
-    let tBody = document.getElementById("teamList");
+    let tBody = document.getElementById("list");
     data.forEach(team => {
         let row = tBody.insertRow(-1);
-        row.insertCell(-1).innerHTML = team.teamName;
-        row.insertCell(-1).innerHTML = team.teamAmountWins;
-        row.insertCell(-1).innerHTML = team.teamAmountLost;
+        row.insertCell(-1).innerHTML = team.name;
+        row.insertCell(-1).innerHTML = team.amountWins;
+        row.insertCell(-1).innerHTML = team.amountLost;
+
 
         let button = document.createElement("button");
         button.innerHTML = "Bearbeiten ...";
         button.type = "button";
         button.name = "editTeam";
-        button.setAttribute("data-teamuuid", team.teamUUID);
+        button.setAttribute("data-teamuuid", team.uuid);
         button.addEventListener("click", editTeam);
         row.insertCell(-1).appendChild(button);
 
@@ -51,7 +52,7 @@ function showTeamlist(data) {
         button.innerHTML = "Löschen ...";
         button.type = "button";
         button.name = "deleteTeam";
-        button.setAttribute("data-teamuuid", team.teamUUID);
+        button.setAttribute("data-teamuuid", team.uuid);
         button.addEventListener("click", deleteTeam);
         row.insertCell(-1).appendChild(button);
 
@@ -82,7 +83,7 @@ function deleteTeam(event) {
         })
         .then(function (response) {
             if (response.ok) {
-                window.location.href = "./teamList.html";
+                window.location.href = "./teamlist.html";
             } else {
                 console.log(response);
             }
