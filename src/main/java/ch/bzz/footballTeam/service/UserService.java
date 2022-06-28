@@ -3,6 +3,7 @@ package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.UserData;
 import ch.bzz.footballTeam.model.User;
+import ch.bzz.footballTeam.util.AESEncrypt;
 
 import javax.annotation.security.PermitAll;
 import javax.ws.rs.*;
@@ -31,7 +32,7 @@ public class UserService {
 
         NewCookie cookie=new NewCookie(
                 "userRole",
-                user.getRole(),
+                AESEncrypt.encrypt(user.getRole()),
                 "/",
                 "",
                 "Login-Cookie",

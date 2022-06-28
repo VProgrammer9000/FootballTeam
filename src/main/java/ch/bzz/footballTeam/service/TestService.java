@@ -1,6 +1,7 @@
 package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
+import ch.bzz.footballTeam.util.AESEncrypt;
 
 import javax.annotation.security.RolesAllowed;
 import javax.ws.rs.CookieParam;
@@ -34,6 +35,7 @@ public class TestService {
     public Response test(
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
@@ -54,6 +56,7 @@ public class TestService {
     public Response restore(
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }

@@ -2,6 +2,7 @@ package ch.bzz.footballTeam.service;
 
 import ch.bzz.footballTeam.data.DataHandler;
 import ch.bzz.footballTeam.model.Team;
+import ch.bzz.footballTeam.util.AESEncrypt;
 
 import javax.annotation.security.RolesAllowed;
 import javax.validation.Valid;
@@ -37,6 +38,7 @@ public class TeamService {
             @QueryParam("sort") String sort,
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
@@ -75,6 +77,7 @@ public class TeamService {
             @QueryParam("uuid") String teamUUID,
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
@@ -101,6 +104,7 @@ public class TeamService {
             @Valid @BeanParam Team team,
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
@@ -127,6 +131,7 @@ public class TeamService {
             @Valid @BeanParam Team team,
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
@@ -160,6 +165,7 @@ public class TeamService {
             @QueryParam("uuid") String teamUUID,
             @CookieParam("userRole") String userRole
     ) {
+        userRole = AESEncrypt.decrypt(userRole);
         if (userRole.equals("user")||userRole.equals("guest")||userRole==null){
             return Response.status(403).build();
         }
